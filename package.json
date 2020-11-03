@@ -1,0 +1,30 @@
+{
+  "name": "plant-arena",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sourabhpoojari/Plant-Arena.git"
+  },
+  "author": "Sourabh Poojary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sourabhpoojari/Plant-Arena/issues"
+  },
+  "homepage": "https://github.com/Sourabhpoojari/Plant-Arena#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11",
+    "nodemon": "^2.0.6",
+    "request": "^2.88.2"
+  }
+}
