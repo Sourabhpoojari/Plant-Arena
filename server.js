@@ -5,6 +5,8 @@ const express = require('express'),
 // DB connection
 connectDB();
 
+// middleware
+app.set('view engine','ejs');
 
     
 
