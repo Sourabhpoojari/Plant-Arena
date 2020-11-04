@@ -1,0 +1,117 @@
+
+.background {
+    background-image: url("/Landing.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    animation: imageAnimation 70s linear infinite; 
+    
+}
+.background:before{
+   
+    content: '';
+    position: absolute;
+    top:0px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+}
+.header{
+position: relative;
+top: 30%;
+  
+   
+}
+.round{
+    width: 25%;
+    border-radius: 100px 100px 100px 100px;
+    color:#12670F;
+    font-weight: 500;
+}
+.customNav{
+    background-color: transparent;
+}
+
+.dropdown-menu{
+    color: black;
+}
+.bestSellingImg{
+    width: 100%;
+}
+.subText{
+    color:#12670F;
+}
+.seemorebtn{
+    width: 25%;
+    border-radius: 100px 100px 100px 100px;
+    background-color: #EB5A5A;
+    color:white;
+    font-weight: 500;
+    border: none;
+}
+.seemorebtn2{
+    width: 15%;
+    border-radius: 100px 100px 100px 100px;
+    background-color: #EB5A5A;
+    color:white;
+    font-weight: 500;
+    border: none;
+    float: right;
+    margin-right: 2%;
+}
+.samedayImage {
+    background-image: url("/sameday.jpg");
+    background-position: right;
+    background-repeat: no-repeat;
+    width: 118%;
+    height: 300px;
+    border: none;
+    opacity: 0.9;
+    position: absolute;
+    top: -150px;
+    left: -10%;
+}
+.jumbo{
+    background-color: #ebebe9;
+}
+.breathFresh{
+    background-image: url("/breathe.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+.natureDoctor{
+    background-image: url("/NatureDoctor.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+.n_margin{
+    margin-top: 10%;
+}
+.topmargin{
+position: absolute;
+    margin-top: 10%;
+    text-align: center;
+}
+.card_change .card{
+    border: none;
+}
+@media screen and (max-width: 430px){
+    .round{
+        width: 80%;
+        border-radius: 100px 100px 100px 100px;
+        color:#12670F;
+        font-weight: 500;
+    }
+
+}
