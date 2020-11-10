@@ -4,6 +4,9 @@ const User = require('../models/user'),
     jwt = require('jsonwebtoken'),
     config = require('config');
 
+// @route POST /user
+// @desc register user
+// @access Public
 const createUser = async (req,res,next) => {
     const { name, email, password, phone} = req.body;
     let user;
@@ -51,4 +54,59 @@ const createUser = async (req,res,next) => {
     }
 }
 
+// @route GET /user
+// @desc get user details
+// @access Private
+const getUser = async (req,res,next)=>{
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        res.status(201).json({user});
+        // give 
+    } catch (err) {
+        console.log(err);
+        res.status(500).send("cannot get user!");
+    }
+};
+
+// @route POST /login
+// @desc login user
+// @access Public
+const logIn = async (req,res,next) =>{
+    const {email, password} = req.body;
+    let user;
+    try {
+        user = await User.findOne({email});
+        if (!user) {
+            return res.status(400).json({errors:[{msg : "invalid credentials"}]});
+        }
+        // check password
+        const match = await bcrypt.compare(password, user.password);
+        if (!match) {
+            return res.status(400).json({errors:[{msg : "invalid credentials"}]});
+        }
+        // setting jwt
+        const payload = {
+            user : {
+                id : user.id
+            }
+        }
+        jwt.sign(
+            payload,
+            config.get('jwtSecret'),
+            {expiresIn : 3600},
+            (err,token) =>{
+                if(err) throw err;
+                // use this token to login
+                res.status(200).json({token});
+            }
+        );
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send('Server error');
+    }
+}
+
+
 exports.createUser = createUser;
+exports.getUser = getUser;
+exports.logIn = logIn;
