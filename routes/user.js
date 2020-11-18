@@ -9,5 +9,11 @@ router.get('/',auth,userController.getUser);
 
 router.post('/login',userController.logIn);
 
+router.get("/Login", (req, res) => {
+    res.render("login")
+})
+router.get("/Signup", (req, res) => {
+    res.render("signup")
+})
 
 module.exports = router;

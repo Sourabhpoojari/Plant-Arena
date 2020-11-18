@@ -97,7 +97,13 @@ const logIn = async (req,res,next) =>{
             (err,token) =>{
                 if(err) throw err;
                 // use this token to login
-                res.status(200).json({token});
+                // Swal.fire({
+                //     icon: 'success',
+                //     text: 'Logged in successfully!',
+                   
+                //   });
+                //res.redirect('/Landing');
+                 res.status(200).json({token});
             }
         );
     } catch (err) {
