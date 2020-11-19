@@ -22,6 +22,14 @@
     
 
 }
+.alertpos{
+    position: absolute;
+    width: 30%;
+    text-align: center;
+    top: 8%;
+    z-index: +1;
+    left: 70%;
+}
 .textMargin{
     margin-top: 70%;
 
