@@ -2,6 +2,8 @@ const User = require('../models/user'),
     gravatar = require('gravatar'),
     bcrypt = require('bcryptjs'),
     jwt = require('jsonwebtoken'),
+    express = require('express'),
+    app = express(),
     config = require('config');
 const Swal = require('sweetalert2')
 // @route POST /user
@@ -44,8 +46,10 @@ const createUser = async (req, res, next) => {
             { expiresIn: 3600 },
             (err, token) => {
                 if (err) throw err;
-                res.flash("success", "Successfully Signed up");
-                res.redirect('/Landing');
+
+                console.log(user);
+                req.flash("success", "Signup Successful");
+                res.render('Landing', { user: user });
                 res.status(200).json({ token });
             }
         );
@@ -102,9 +106,9 @@ const logIn = async (req, res, next) => {
                 // use this token to login
 
                 console.log("login success");
-                console.log("user");
                 req.flash("success", "successfully Logged in");
-                res.redirect('/Landing');
+
+                res.render('Landing', { user: user });
 
                 res.status(200).json({ token });
             }

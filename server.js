@@ -19,12 +19,12 @@ app.use(require("express-session")({
 // Middleware
 app.use(flash());
 app.use(function (req, res, next) {
-    res.locals.currentUser = user;
 
     res.locals.error = req.flash("error");
     res.locals.success = req.flash("success");
     next();
 })
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
     res.redirect("/Landing")
 });
 app.get("/Landing", (req, res) => {
-    res.render("Landing")
+    res.render("Landing");
 })
 app.get("/Login", (req, res) => {
     res.render("login")

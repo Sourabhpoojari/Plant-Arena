@@ -25,6 +25,17 @@ top: 30%;
   
    
 }
+.userImg{
+    height: 28px;
+    border-radius: 50%;
+}
+h1{
+    font-family: 'Dancing Script', cursive;
+}
+p{
+    font-family: 'Source Serif Pro', serif;
+}
+
 .searchInputStyle{
     border: none;
     outline: none;
