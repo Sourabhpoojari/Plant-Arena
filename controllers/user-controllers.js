@@ -44,6 +44,8 @@ const createUser = async (req,res,next) => {
             {expiresIn : 3600},
             (err,token)=>{
                 if (err) throw err;
+                user.token = token;
+                await user.save();
                 res.status(200).json({token});
             }
         );
@@ -104,6 +106,7 @@ const logIn = async (req,res,next) =>{
                 //   });
                 //res.redirect('/Landing');
                 console.log(user);
+                user.token = token;
                  res.status(200).json({token});
             }
         );
@@ -113,7 +116,24 @@ const logIn = async (req,res,next) =>{
     }
 }
 
+// @route GET /logout
+// @desc login user
+// @access Private
+const logOut = async (req,res,next) => {
+    // remove token from user
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        user.token.remove();
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send('Server error');
+    }
+    
+
+}
+
 
 exports.createUser = createUser;
 exports.getUser = getUser;
 exports.logIn = logIn;
+exports.logOut = logOut;
