@@ -103,6 +103,7 @@ const logIn = async (req,res,next) =>{
                    
                 //   });
                 //res.redirect('/Landing');
+                console.log(user);
                  res.status(200).json({token});
             }
         );
