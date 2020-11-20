@@ -4,6 +4,7 @@ const User = require('../models/user'),
     jwt = require('jsonwebtoken'),
     express = require('express'),
     app = express(),
+    Token = require('../config/token'),
     config = require('config');
 const Swal = require('sweetalert2')
 // @route POST /user
@@ -48,6 +49,7 @@ const createUser = async (req, res, next) => {
                 if (err) throw err;
                 user.token = token;
                  user.save();
+                 Token.token = token;
                 res.status(200).json({token});
                 req.flash("success", "Signup Successful");
                 res.render('Landing', { user: user });
@@ -104,6 +106,7 @@ const logIn = async (req, res, next) => {
                 if (err) throw err;
                 // use this token to login
                 user.token = token;
+                Token.token = token;
                 user.save();
                 console.log("login success");
                 req.flash("success", "successfully Logged in");
@@ -125,6 +128,7 @@ const logOut = async (req,res,next) => {
     try {
         const user = await User.findById(req.user.id).select('-password');
         user.token = null;
+        Token.token = null;
         await user.save();
         // res.redirect('/Landing');
         res.status(200).send('user logged out');
