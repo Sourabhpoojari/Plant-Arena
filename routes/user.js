@@ -16,4 +16,5 @@ router.get("/Signup", (req, res) => {
     res.render("signup")
 })
 
+router.get('/logout',auth,userController.logOut);
 module.exports = router;
