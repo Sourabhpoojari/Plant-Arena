@@ -50,7 +50,7 @@ const createUser = async (req, res, next) => {
                 user.token = token;
                  user.save();
                  Token.token = token;
-                res.status(200).json({token});
+               return res.status(200).json({token});
                 req.flash("success", "Signup Successful");
                 res.render('Landing', { user: user });
             }
