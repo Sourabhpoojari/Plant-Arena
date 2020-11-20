@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken'),
     config = require('config'),
+    Token = require('../config/token'),
     User = require('../models/user');
 
 module.exports = async (req, res, next) => {
@@ -10,11 +11,21 @@ module.exports = async (req, res, next) => {
     // }
     // verify token 
     try {
-        const decoded = jwt.verify(token, config.get('jwtSecret'));
-        req.user = decoded.user;
-        const user = await User.findById(req.user.id).select('-password');
-        if (user.token == null || !token) {
-            return res.status(401).json({ msg: 'No token found, authorization denied' });
+        if (token) {
+            const decoded = jwt.verify(token, config.get('jwtSecret'));
+            req.user = decoded.user;
+            const user = await User.findById(req.user.id).select('-password');
+            if (user.token == null || !token) {
+                return res.status(401).json({ msg: 'No token found, authorization denied' });
+            }
+        }
+        if (Token.token) {
+            const decoded = jwt.verify(Token.token, config.get('jwtSecret'));
+            req.user = decoded.user;
+            const user = await User.findById(req.user.id).select('-password');
+            if (user.token == null || !Token.token) {
+                return res.status(401).json({ msg: 'No token found, authorization denied' });
+            }
         }
         next();
     } catch (err) {
