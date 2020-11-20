@@ -106,7 +106,6 @@ const logIn = async (req, res, next) => {
             (err, token) => {
                 if (err) throw err;
                 // use this token to login
-
                 console.log("login success");
                 user.token = token;
                 user.save();
