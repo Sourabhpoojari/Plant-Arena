@@ -136,8 +136,8 @@ const logOut = async (req, res, next) => {
         user.token = null;
         Token.token = null;
         await user.save();
-        // res.redirect('/Landing');
-        res.status(200).send('user logged out');
+        res.redirect('/Landing');
+        // res.status(200).send('user logged out');
     } catch (err) {
         console.log(err);
         return res.status(500).send('Server error');

@@ -1,3 +1,3 @@
 const token = null;
 
-module.exports = token;
+exports.token =token;
