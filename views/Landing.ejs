@@ -80,15 +80,25 @@
       </nav>
       <div class="header text-center  container">
         
-        <h1 class="text-light animate__animated  animate__bounceInDown">Plant Arena</h1>
-        <p class="text-light mb-5 animate__animated  animate__lightSpeedInRight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
+        <h1 class="text-light animate__animated  animate__bounceInDown headStyle">Plant Arena</h1>
+        <p class="text-light mb-5 animate__animated  animate__lightSpeedInRight paraStyle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
+        <% if(typeof user=='undefined' || !user){ %>
         <a class="btn btn-light round mt-5 animate__animated animate__bounce animate__delay-1s" href="/Signup" > Get Started </a>
+        <% } 
+        else{ %>
+        <h4 class="text-light mt-5 headStyle">Scroll</h4>
+        <h1 class="mt-2 animate__animated animate__bounce animate__delay-1s text-light"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg></h1>
+        <%  } %>
+
     </div>
   </div>
 
     <div>
       <div class="container mt-5 text-center" data-aos="fade-right" >
-        <h2 class="text-center subText">Best Selling</h2>
+        <h2 class="text-center subText headStyle">Best Selling</h2>
         <div class="row align-items-center">
           <div class="col-lg-3">
             <img class="bestSellingImg" src="/mostsold.png" alt="">
@@ -147,7 +157,7 @@
       <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo unde sequi quo nesciunt, illum deserunt? Omnis, aliquam vel ratione deserunt sint, velit totam quam in aspernatur sunt inventore, hic nisi.</P>
      </div> -->
      <div class="header text-center  container" >
-      <h1 class="text-light">Breath Fresh</h1>
+      <h1 class="text-light headStyle">Breath Fresh</h1>
       <p class="text-light mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
       
      </div>
@@ -211,7 +221,7 @@
           <div class="col-lg-9">
             <div class="natureDoctor" data-aos="flip-left" >
               <div class="header p-5  container">
-                <h1 class="text-light">Nature is a Doctor</h1>
+                <h1 class="text-light headStyle">Nature is a Doctor</h1>
                 <p class="text-light mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
                 
                </div>
@@ -278,7 +288,7 @@
       </div>
       
       <div class="topspace">
-        <h1 class="text-center text-light display-4 mt-5">“Peace comes from within. <span class="bg-danger p-1" data-aos="fade-right">Do not seek it without.</span> ”</h1>
+        <h1 class="text-center text-light display-4 mt-5 headStyle">“Peace comes from within. <span class="bg-danger p-1" data-aos="fade-right">Do not seek it without.</span> ”</h1>
         <p class="subPosition text-light">-Buddha</p>
       </div>
       <div class="container">

@@ -29,10 +29,10 @@ top: 30%;
     height: 28px;
     border-radius: 50%;
 }
-h1{
+.headStyle{
     font-family: 'Dancing Script', cursive;
 }
-p{
+.paraStyle{
     font-family: 'Source Serif Pro', serif;
 }
 
