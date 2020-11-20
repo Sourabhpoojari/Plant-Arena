@@ -1,5 +1,6 @@
 <%- include("partials/header") %>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<div class="mainDiv">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
 <div class="background">
 
@@ -42,7 +43,7 @@
             </svg></a>
           </form>
      
-          <ul class="navbar-nav">
+          <!-- <ul class="navbar-nav">
       
             <li class="nav-item">
               <a class="nav-link ml-4 text-light" href="/Login">Login</a>
@@ -50,13 +51,38 @@
             <li class="nav-item">
               <a class="nav-link ml-4 text-light" href="/Signup">Sign up</a>
             </li>
-        </ul>
+        </ul> -->
+        <% if(typeof user=='undefined' || !user){ %>
+          <a class="nav-item nav-link active text-light" href="/login">login</a>
+          <a class="nav-item nav-link active text-light" href="/signup">Sign up</a>
+       <% }
+       else{ %>
+        <div class="dropdown">
+          
+          <a class="dropdown-toggle mr-5 ml-4 text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="<%= user.avatar %>" alt="" class="userImg"> <%= user.name %>
+          </a>
+          
+          
+          <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#" style="text-decoration: none;"><svg class="bi bi-box-arrow-in-left mr-2" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M7.854 11.354a.5.5 0 0 0 0-.708L5.207 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
+              <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0 0 1h9A.5.5 0 0 0 15 8z"/>
+              <path fill-rule="evenodd" d="M2.5 14.5A1.5 1.5 0 0 1 1 13V3a1.5 1.5 0 0 1 1.5-1.5h8A1.5 1.5 0 0 1 12 3v1.5a.5.5 0 0 1-1 0V3a.5.5 0 0 0-.5-.5h-8A.5.5 0 0 0 2 3v10a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-1.5a.5.5 0 0 1 1 0V13a1.5 1.5 0 0 1-1.5 1.5h-8z"/>
+            </svg> Logout</a>
+          </div>
+        </div>
+      <%  } %>
+
+
+
         </div>
       </nav>
       <div class="header text-center  container">
-        <h1 class="text-light">Plant Arena</h1>
-        <p class="text-light mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
-        <a class="btn btn-light round mt-5" href="/Signup" > Get Started </a>
+        
+        <h1 class="text-light animate__animated  animate__bounceInDown">Plant Arena</h1>
+        <p class="text-light mb-5 animate__animated  animate__lightSpeedInRight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
+        <a class="btn btn-light round mt-5 animate__animated animate__bounce animate__delay-1s" href="/Signup" > Get Started </a>
     </div>
   </div>
 
@@ -75,7 +101,7 @@
           </P>
           </div>
         </div>
-        <button class="btn btn-success seemorebtn ">See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <button class="btn  seemorebtn mb-5">See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
         </svg></button>
 
@@ -83,7 +109,7 @@
 
       </div>
 
-      <div class="jumbotron jumbo mt-5 ml-2" style="width: 99%;" data-aos="fade-left" >
+      <!-- <div class="jumbotron jumbo mt-5 ml-2" style="width: 99%;" data-aos="fade-left" >
         <h2 class="text-center subText">Get plants same day</h2>
 
         <div class="row align-items-center text-center">
@@ -106,7 +132,7 @@
           </svg></button>
 
         </div>
-      </div>
+      </div> -->
     </div>
 
     <div>
@@ -121,7 +147,7 @@
       <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo unde sequi quo nesciunt, illum deserunt? Omnis, aliquam vel ratione deserunt sint, velit totam quam in aspernatur sunt inventore, hic nisi.</P>
      </div> -->
      <div class="header text-center  container" >
-      <h1 class="text-light">BREATH FRESH</h1>
+      <h1 class="text-light">Breath Fresh</h1>
       <p class="text-light mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
       
      </div>
@@ -130,16 +156,8 @@
       <div class="container">
         <div class="row mt-5 mb-5">
           <div class="col-lg-4">
-            <!-- <div class="card front" style="width: 18rem;">
-              <img src="/productfresh2.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Nephrolepis Exaltata Teddy</h6>
-            </div>
-            <div class="card back" style="width: 18rem;">
-              <img src="/productfresh2.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Nephrolepis Exaltata Teddy</h6>
-            </div> -->
-
-            <div class="flip-card">
+     
+            <!-- <div class="flip-card">
               <div class="flip-card-inner">
                 <div class="flip-card-front">
                   <img src="/productfresh2.jpg" class="card-img-top" alt="...">
@@ -154,8 +172,12 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
+            <div class="card" style="width: 18rem;">
+              <img src="/productfresh2.jpg" class="card-img-top" alt="...">
+              <h6 class="text-center mt-2 subText">Nephrolepis Exaltata Teddy</h6>
 
+            </div>
 
           </div>
           
@@ -175,7 +197,7 @@
           </div>
           
         </div>
-        <button class="btn btn-success seemorebtn2 mt-4 pr-3" >See More   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <button class="btn seemorebtn2 mt-4 pr-3" >See More   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
         </svg></button>
 
@@ -189,7 +211,7 @@
           <div class="col-lg-9">
             <div class="natureDoctor" data-aos="flip-left" >
               <div class="header p-5  container">
-                <h1 class="text-light">NATURE IS A DOCTOR</h1>
+                <h1 class="text-light">Nature is a Doctor</h1>
                 <p class="text-light mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
                 
                </div>
@@ -232,7 +254,7 @@
 
               </div>
               <div class="text-center">
-                <button class="btn btn-success seemorebtn mt-4" style="width: 80%;" >See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <button class="btn seemorebtn mt-4" style="width: 80%;" >See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
                 </svg></button>
               </div>
@@ -244,9 +266,216 @@
 
     </div>
 
+    <div class="buddha">
+      <div class="row mb-5">
+        <div class="col-lg-10"></div>
+        <div class="col-lg-2 mt-5" data-aos="fade-right">
+          <p class="text-light" >Fresh air plants</p>
+          <p class="text-light">Cool breeze plants</p>
+          <p class="text-light">Meditation plants</p>
+          <p class="text-light">Symbol of peace</p>
+        </div>
+      </div>
+      
+      <div class="topspace">
+        <h1 class="text-center text-light display-4 mt-5">“Peace comes from within. <span class="bg-danger p-1" data-aos="fade-right">Do not seek it without.</span> ”</h1>
+        <p class="subPosition text-light">-Buddha</p>
+      </div>
+      <div class="container">
+        <div class="row mt-5">
+          <div class="col-lg-4">
+            <div class="card p-4" style="width: 18rem;">
+              <img src="/peacelily.jpg" class="card-img-top" alt="...">
+              <h6 class="text-center mt-2 subText">peacelily</h6>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            
+            <div class="card p-4" style="width: 18rem;">
+              <img src="/peace3.jpg" class="card-img-top" alt="...">
+              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card p-4" style="width: 18rem;">
+              <img src="/peace2.jpg" class="card-img-top" alt="...">
+              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
+            </div>
+
+            <div class="text-center">
+              <button class="btn seemorebtn mt-4" style="width: 80%;" >See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="manure">
+      <div class="row mb-5 mt-5">
+        <div class="col-lg-10"></div>
+        <div class="col-lg-2 mt-5">
+          <p class="text-light">Fresh air plants</p>
+          <p class="text-light">Cool breeze plants</p>
+          <p class="text-light">Meditation plants</p>
+          <p class="text-light">Symbol of peace</p>
+        </div>
+      </div>
+      
+      <div class="topspace1">
+        <h4 class="text-center text-light" data-aos="fade-right">“Manures contribute to the fertility of soil by adding organic matter and nutrients ”</h4>
+       
+      </div>
+      <div class="container mt-5">
+        <div class="row mt-5">
+          <div class="col-lg-4">
+           
+            <div class="card p-4" style="width: 18rem;">
+              <img src="/manure4.jpg" class="card-img-top" alt="...">
+              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            
+            <div class="card p-4" style="width: 18rem;">
+              <img src="/maure3.png" class="card-img-top" alt="...">
+              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
+            </div>
+            
+          </div>
+
+          <div class="col-lg-4">
+            
+            <div class="card p-4" style="width: 18rem;">
+              <img src="/manure2.png" class="card-img-top" alt="...">
+              <h6 class="text-center mt-2 subText">peacelily</h6>
+            </div>
+
+            <div class="text-center">
+              <button class="btn seemorebtn mt-4" style="width: 80%;" >See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="pebble">
+      <div class="row mb-5">
+        <div class="col-lg-10"></div>
+        <div class="col-lg-2 mt-5">
+          <p class="text-light">Fresh air plants</p>
+          <p class="text-light">Cool breeze plants</p>
+          <p class="text-light">Meditation plants</p>
+          <p class="text-light">Symbol of peace</p>
+        </div>
+      </div>
+      
+      <div class="topspace1">
+        <h4 class="text-center text-light" data-aos="fade-right">“pebbles are also used to create living spaces and gardens on the rooftops of buildings”</h4>
+       
+      </div>
+      <div class="container mt-5">
+        <div class="row mt-5">
+          <div class="col-lg-4">
+            <div class="card p-4" style="width: 18rem;">
+              <img src="/pebble1.jpg" class="card-img-top" alt="...">
+              <h6 class="text-center mt-2 subText">peacelily</h6>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card p-4" style="width: 18rem;">
+              <img src="/pebble2.jpg" class="card-img-top" alt="...">
+              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card p-4" style="width: 18rem;">
+              <img src="/pebble3.jpg" class="card-img-top" alt="...">
+              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
+            </div>
+
+            <div class="text-center">
+              <button class="btn seemorebtn mt-4" style="width: 80%;" >See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+              </svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="footer p-2 ">
+      <div class="mt-5 mb-5">
+      <h3 class="text-center text-light ">Plant Arena</h3>
+
+      </div>
+
+
+      <div class="row text-light">
+        <div class="col-lg-3 d-flex justify-content-center ">
+          <div>
+            <a href="#" class="text-light"><b>About us</b></a><br><br>
+            <a href="#" class=" text-light mt-4">Contracts</a><br><br>
+            <a href="#" class=" text-light mt-4">Shares</a><br><br>
+            <a href="#" class=" text-light mt-4">Growth</a>
+          </div>
+  
+        </div>
+
+        <div class="col-lg-3 d-flex justify-content-center">
+          <div>
+            <a href="#" class="text-light"><b>Branches</b></a><br><br>
+            <a href="#" class="mt-4 text-light">Banglore</a><br><br>
+            <a href="#" class="mt-4 text-light">Kolkata</a><br><br>
+            <a href="#" class="mt-4 text-light">Mumbai</a>
+          </div>
+        </div>
+        <div class="col-lg-3 d-flex justify-content-center">
+          <div>
+            <a href="#" class="text-light"><b>Fertilizer Partners</b></a><br><br>
+            <a href="#" class="text-light">GreenGlame Fertilisers</a><br><br>
+            <a href="#" class="text-light">natureNest Fertilisers</a><br><br>
+            <a href="#" class="text-light">NatureEdge Fertilisers</a>
+          </div>
+        </div>
+
+        <div class="col-lg-3 d-flex justify-content-center">
+          <div>
+            <a href="#" class="text-light"><b>Contact us</b></a><br><br>
+            <a href="#" class="mt-4 text-light">+91-7899562148</a><br><br>
+            <a href="#" class="mt-4 text-light">https://www.plantarena.io</a><br><br>
+           
+            <a href="#"class="mt-4 text-light">plantarena@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+</div>
+
+
+
+
     <script>
       AOS.init({
-          duration:600
+          duration:800
       });
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" />

@@ -25,6 +25,17 @@ top: 30%;
   
    
 }
+.userImg{
+    height: 28px;
+    border-radius: 50%;
+}
+h1{
+    font-family: 'Dancing Script', cursive;
+}
+p{
+    font-family: 'Source Serif Pro', serif;
+}
+
 .searchInputStyle{
     border: none;
     outline: none;
@@ -64,8 +75,56 @@ top: 30%;
     color:white;
     font-weight: 500;
     border: none;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: -15px 12px 34px -25px  black;
 
+}
+.buddha {
+    background-image: url("/buddha1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    animation: imageAnimation 70s linear infinite; 
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+.manure{
+    
+    background-image: url("/maure.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    height: 80vh;
+    animation: imageAnimation 70s linear infinite; 
+    margin-bottom: 5%;
+    margin-top: 40%;
+}
+
+.pebble{
+    background-image: url("/beach.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    animation: imageAnimation 70s linear infinite; 
+    margin-bottom: 5%;
+    margin-top: 30%;
+}
+.footer{
+    height: 60vh;
+    background-color: rgb(59, 53, 53);
+    
+    margin-top: 30%;
+}
+.mainDiv{
+    background-color: white;
+}
+.topspace{
+    margin-top: 22%;
+}
+.subPosition{
+    float: right;
+    margin-right: 10%;
 }
 .seemorebtn2{
     width: 20%;
@@ -76,7 +135,7 @@ top: 30%;
     border: none;
     float: right;
     margin-right: 5%;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: -15px 12px 34px -25px  black;
 }
 
 

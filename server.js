@@ -1,24 +1,41 @@
+const user = require('./models/user');
 
 const express = require('express'),
     app = express(),
     bodyParser = require('body-parser'),
+    flash = require('connect-flash'),
     connectDB = require('./config/db');
 
-    // DB connection
-    connectDB();
+// DB connection
+connectDB();
+
+app.use(require("express-session")({
+    secret: "this is Plant Arena",
+    resave: false,
+    saveUninitialized: false
+}));
+
 
 // Middleware
-app.use(bodyParser.urlencoded({extended : true}));
+app.use(flash());
+app.use(function (req, res, next) {
+
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    next();
+})
+
+app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(express.static("Assets"));
-app.use(express.json({extended:false}));
+app.use(express.json({ extended: false }));
 
 app.get("/", (req, res) => {
     res.redirect("/Landing")
 });
 app.get("/Landing", (req, res) => {
-    res.render("Landing")
+    res.render("Landing");
 })
 app.get("/Login", (req, res) => {
     res.render("login")
@@ -28,7 +45,8 @@ app.get("/Signup", (req, res) => {
 })
 
 // Define routes
-app.use('/user',require('./routes/user'));
+app.use('/user', require('./routes/user'));
+
 
 
 
