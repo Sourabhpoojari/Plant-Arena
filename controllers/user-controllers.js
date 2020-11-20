@@ -47,9 +47,12 @@ const createUser = async (req, res, next) => {
             (err, token) => {
                 if (err) throw err;
 
-                console.log(user);
+                user.token = token;
+                user.save();
+
                 req.flash("success", "Signup Successful");
                 res.render('Landing', { user: user });
+
                 res.status(200).json({ token });
             }
         );
@@ -65,8 +68,7 @@ const createUser = async (req, res, next) => {
 // @access Private
 const getUser = async (req, res, next) => {
     try {
-        const user = await User.findById(req.user.id).select('-password');
-
+        const user = await User.findById(req.user.id).select('-password -token');
         res.status(201).json({ user });
         // give 
     } catch (err) {
@@ -106,9 +108,12 @@ const logIn = async (req, res, next) => {
                 // use this token to login
 
                 console.log("login success");
+                user.token = token;
+                user.save();
                 req.flash("success", "successfully Logged in");
 
                 res.render('Landing', { user: user });
+
 
                 res.status(200).json({ token });
             }
@@ -119,7 +124,27 @@ const logIn = async (req, res, next) => {
     }
 }
 
+// @route GET /logout
+// @desc login user
+// @access Private
+const logOut = async (req, res, next) => {
+    // remove token from user
+    try {
+        const user = await User.findById(req.user.id).select('-password');
+        user.token = null;
+        await user.save();
+        // res.redirect('/Landing');
+        res.status(200).send('user logged out');
+    } catch (err) {
+        console.log(err);
+        return res.status(500).send('Server error');
+    }
+
+
+}
+
 
 exports.createUser = createUser;
 exports.getUser = getUser;
 exports.logIn = logIn;
+exports.logOut = logOut;
