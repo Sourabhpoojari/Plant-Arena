@@ -65,7 +65,7 @@
           
           
           <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#" style="text-decoration: none;"><svg class="bi bi-box-arrow-in-left mr-2" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <a class="dropdown-item" href="/user/logout" style="text-decoration: none;"><svg class="bi bi-box-arrow-in-left mr-2" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M7.854 11.354a.5.5 0 0 0 0-.708L5.207 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0 0 1h9A.5.5 0 0 0 15 8z"/>
               <path fill-rule="evenodd" d="M2.5 14.5A1.5 1.5 0 0 1 1 13V3a1.5 1.5 0 0 1 1.5-1.5h8A1.5 1.5 0 0 1 12 3v1.5a.5.5 0 0 1-1 0V3a.5.5 0 0 0-.5-.5h-8A.5.5 0 0 0 2 3v10a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-1.5a.5.5 0 0 1 1 0V13a1.5 1.5 0 0 1-1.5 1.5h-8z"/>
@@ -80,15 +80,25 @@
       </nav>
       <div class="header text-center  container">
         
-        <h1 class="text-light animate__animated  animate__bounceInDown">Plant Arena</h1>
-        <p class="text-light mb-5 animate__animated  animate__lightSpeedInRight">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
+        <h1 class="text-light animate__animated  animate__bounceInDown headStyle">Plant Arena</h1>
+        <p class="text-light mb-5 animate__animated  animate__lightSpeedInRight paraStyle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
+        <% if(typeof user=='undefined' || !user){ %>
         <a class="btn btn-light round mt-5 animate__animated animate__bounce animate__delay-1s" href="/Signup" > Get Started </a>
+        <% } 
+        else{ %>
+        <h4 class="text-light mt-5 headStyle">Scroll</h4>
+        <h1 onclick="scrollWin()"  class="mt-2 animate__animated animate__bounce animate__delay-1s text-light"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-chevron-double-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M1.646 6.646a.5.5 0 0 1 .708 0L8 12.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+          <path fill-rule="evenodd" d="M1.646 2.646a.5.5 0 0 1 .708 0L8 8.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/>
+        </svg></h1>
+        <%  } %>
+
     </div>
   </div>
 
     <div>
       <div class="container mt-5 text-center" data-aos="fade-right" >
-        <h2 class="text-center subText">Best Selling</h2>
+        <h2 class="text-center subText headStyle">Best Selling</h2>
         <div class="row align-items-center">
           <div class="col-lg-3">
             <img class="bestSellingImg" src="/mostsold.png" alt="">
@@ -147,7 +157,7 @@
       <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo unde sequi quo nesciunt, illum deserunt? Omnis, aliquam vel ratione deserunt sint, velit totam quam in aspernatur sunt inventore, hic nisi.</P>
      </div> -->
      <div class="header text-center  container" >
-      <h1 class="text-light">Breath Fresh</h1>
+      <h1 class="text-light headStyle">Breath Fresh</h1>
       <p class="text-light mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
       
      </div>
@@ -211,7 +221,7 @@
           <div class="col-lg-9">
             <div class="natureDoctor" data-aos="flip-left" >
               <div class="header p-5  container">
-                <h1 class="text-light">Nature is a Doctor</h1>
+                <h1 class="text-light headStyle">Nature is a Doctor</h1>
                 <p class="text-light mb-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque, sit architecto eos rerum, in consequuntur doloribus vero minus, expedita assumenda veritatis perferendis excepturi. Laborum sit minima atque quae placeat consequuntur.</p>
                 
                </div>
@@ -278,7 +288,7 @@
       </div>
       
       <div class="topspace">
-        <h1 class="text-center text-light display-4 mt-5">“Peace comes from within. <span class="bg-danger p-1" data-aos="fade-right">Do not seek it without.</span> ”</h1>
+        <h1 class="text-center text-light display-4 mt-5 headStyle">“Peace comes from within. <span class="bg-danger p-1" data-aos="fade-right">Do not seek it without.</span> ”</h1>
         <p class="subPosition text-light">-Buddha</p>
       </div>
       <div class="container">
@@ -390,21 +400,21 @@
           <div class="col-lg-4">
             <div class="card p-4" style="width: 18rem;">
               <img src="/pebble1.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">peacelily</h6>
+              <h6 class="text-center mt-2 subText">Garden Pebbles</h6>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="card p-4" style="width: 18rem;">
               <img src="/pebble2.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
+              <h6 class="text-center mt-2 subText">River Pebbles</h6>
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="card p-4" style="width: 18rem;">
               <img src="/pebble3.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
+              <h6 class="text-center mt-2 subText">Marble Chips</h6>
             </div>
 
             <div class="text-center">
@@ -470,7 +480,15 @@
 
 </div>
 
-
+<script>
+  function scrollWin() {
+    window.scroll({
+  top: 700, 
+  left: 0, 
+  behavior: 'smooth'
+});
+  }
+  </script>
 
 
     <script>

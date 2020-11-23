@@ -5,12 +5,19 @@ const User = require('../models/user'),
     express = require('express'),
     app = express(),
     Token = require('../config/token'),
-    config = require('config');
-const Swal = require('sweetalert2')
+    config = require('config'),
+    {validationResult} = require('express-validator');
+const Swal = require('sweetalert2');
+
 // @route POST /user
 // @desc register user
 // @access Public
 const createUser = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        // use flash to display errors
+        return res.status(400).json({errors:errors.array()});
+    }
     const { name, email, password, phone } = req.body;
     let user;
     try {
@@ -47,11 +54,10 @@ const createUser = async (req, res, next) => {
             { expiresIn: 3600 },
             (err, token) => {
                 if (err) throw err;
-                user.token = token;
+                user.token , tokenID = token;
                  user.save();
-                 Token.token = token;
                 req.flash("success", "Signup Successful");
-                res.render('Landing', { user: user });
+                // res.render('Landing', { user: user });
                 res.status(200).json({token});
             }
         );
@@ -68,7 +74,7 @@ const createUser = async (req, res, next) => {
 const getUser = async (req, res, next) => {
     try {
         const user = await User.findById(req.user.id).select('-password -token');
-        res.status(201).json({user});
+        res.status(201).json({ user });
         // give 
     } catch (err) {
         console.log(err);
@@ -80,6 +86,10 @@ const getUser = async (req, res, next) => {
 // @desc login user
 // @access Public
 const logIn = async (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({errors:errors.array()});
+    }
     const { email, password } = req.body;
     let user;
     try {
@@ -105,13 +115,17 @@ const logIn = async (req, res, next) => {
             (err, token) => {
                 if (err) throw err;
                 // use this token to login
-                user.token = token;
-                Token.token = token;
-                user.save();
                 console.log("login success");
+                
+                user.token = token;
+                Token.tokenID = token;
+                user.save();
                 req.flash("success", "successfully Logged in");
+
                 // res.render('Landing', { user: user });
+                
                 res.status(200).json({ token });
+                
             }
         );
     } catch (err) {
@@ -123,21 +137,19 @@ const logIn = async (req, res, next) => {
 // @route GET /logout
 // @desc login user
 // @access Private
-const logOut = async (req,res,next) => {
+const logOut = async (req, res, next) => {
     // remove token from user
     try {
         const user = await User.findById(req.user.id).select('-password');
         user.token = null;
-        Token.token = null;
+        Token.tokenID = null;
         await user.save();
-        // res.redirect('/Landing');
-        res.status(200).send('user logged out');
+        res.redirect('/Landing');
+        // res.status(200).send('user logged out');
     } catch (err) {
         console.log(err);
         return res.status(500).send('Server error');
     }
-    
-
 }
 
 
