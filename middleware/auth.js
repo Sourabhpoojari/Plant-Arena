@@ -15,17 +15,20 @@ module.exports = async (req, res, next) => {
             const decoded = jwt.verify(token, config.get('jwtSecret'));
             req.user = decoded.user;
             const user = await User.findById(req.user.id).select('-password');
-            if (user.token == null || !token) {
+            if (user.token == null) {
                 return res.status(401).json({ msg: 'No token found, authorization denied' });
             }
         }
-        if (Token.token) {
-            const decoded = jwt.verify(Token.token, config.get('jwtSecret'));
+        else if (Token.tokenID) {
+            const decoded = jwt.verify(Token.tokenID, config.get('jwtSecret'));
             req.user = decoded.user;
             const user = await User.findById(req.user.id).select('-password');
-            if (user.token == null || !Token.token) {
+            if (user.token == null) {
                 return res.status(401).json({ msg: 'No token found, authorization denied' });
             }
+        }
+        else{
+            return res.status(401).json({ msg: 'No token found, authorization denied' });
         }
         next();
     } catch (err) {

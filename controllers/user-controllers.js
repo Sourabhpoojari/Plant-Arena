@@ -122,7 +122,7 @@ const logIn = async (req, res, next) => {
                 user.save();
                 req.flash("success", "successfully Logged in");
 
-                // res.render('Landing', { user: user });
+                res.render('Landing', { user: user });
                 
                 res.status(200).json({ token });
                 
