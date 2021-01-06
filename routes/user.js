@@ -1,6 +1,6 @@
 const router = require('express').Router(),
     userController = require('../controllers/user-controllers'),
-    auth = require('../middleware/auth'),
+    {isLoggedIn} = require('../middleware/auth'),
     {check} = require('express-validator');
 
 
@@ -11,7 +11,7 @@ router.post('/',
     check('phone','please enter a valid phone number').isLength({min:10}),
     userController.createUser);
 
-router.get('/',auth,userController.getUser);
+router.get('/',isLoggedIn,userController.getUser);
 
 router.post('/login',
     check('email','Please enter a valid email address').isEmail(),
@@ -25,5 +25,5 @@ router.get("/Signup", (req, res) => {
     res.render("signup")
 })
 
-router.get('/logout',auth,userController.logOut);
+router.get('/logout',isLoggedIn,userController.logOut);
 module.exports = router;
