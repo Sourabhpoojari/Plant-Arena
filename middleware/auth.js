@@ -1,35 +1,17 @@
-const jwt = require('jsonwebtoken'),
-    config = require('config'),
-    Token = require('../config/token'),
-    User = require('../models/user');
-
-module.exports = async (req, res, next) => {
-    const token = req.header('x-auth-token');
-    // if no token
-    // if (!token) {
-    //     return res.status(401).json({ msg: 'No token found, authorization denied' });
-    // }
-    // verify token 
+const  isLoggedIn = (req,res,next)=>{
     try {
-        if (token) {
-            const decoded = jwt.verify(token, config.get('jwtSecret'));
-            req.user = decoded.user;
-            const user = await User.findById(req.user.id).select('-password');
-            if (user.token == null || !token) {
-                return res.status(401).json({ msg: 'No token found, authorization denied' });
-            }
+        if (req.isAuthenticated()) {
+            return next();
         }
-        if (Token.token) {
-            const decoded = jwt.verify(Token.token, config.get('jwtSecret'));
-            req.user = decoded.user;
-            const user = await User.findById(req.user.id).select('-password');
-            if (user.token == null || !Token.token) {
-                return res.status(401).json({ msg: 'No token found, authorization denied' });
-            }
+        else{
+            req.flash('error','You have to login to do that!');
+            res.redirect('/login');
         }
-        next();
-    } catch (err) {
-        console.log(err.message);
-        res.status(401).json({ msg: 'Token is not valid' });
+    } catch (error) {
+        console.log(err);
+        return res.status(500).send('auth error');
     }
-};
+    
+}
+
+exports.isLoggedIn = isLoggedIn;

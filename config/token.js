@@ -1,3 +1,3 @@
-const token = null;
+ const tokenID = null;
 
-exports.token =token;
+exports.tokenID =tokenID;
