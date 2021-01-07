@@ -32,20 +32,21 @@ const createUser = async (req, res, next) => {
         user = new User({
             name,
             email,
-            password,
             phone,
             avatar
         });
-        // bcrypt password
-        const salt = await bcrypt.genSalt(10);
-        user.password = await bcrypt.hash(password, salt);
-        await user.save();
-
-        passport.authenticate('local')(req,res,()=>{
-            // use redirect here with flash
-
-            
+        User.register(user,password,(err,user)=>{
+            if (err) {
+                return res.redirect('Signup');
+            }
+            passport.authenticate('local')(req,res,()=>{
+                // use redirect here with flash
+                res.redirect("/Landing");
+                
+            });
         });
+
+       
         // return res.status(200).send("user registered");
     } catch (err) {
         console.log(err);
