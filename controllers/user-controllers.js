@@ -19,10 +19,11 @@ const createUser = async (req, res, next) => {
     }
     const { name, email, password, phone } = req.body;
     let user;
+
     try {
         user = await User.findOne({ email });
         if (user) {
-            return res.status(400).json({ errors: [{ msg: "User with this email'id already exists" }] });
+            res.status(400).json({ errors: [{ msg: "User with this email'id already exists" }] });
         }
         const avatar = gravatar.url(email, {
             s: '200',
@@ -32,20 +33,31 @@ const createUser = async (req, res, next) => {
         user = new User({
             name,
             email,
-            password,
             phone,
             avatar
         });
-        // bcrypt password
-        const salt = await bcrypt.genSalt(10);
-        user.password = await bcrypt.hash(password, salt);
-        await user.save();
 
-        passport.authenticate('local')(req, res, () => {
-            res.redirect('/Landing')
+        User.register({ username: name, email: email, phone: phone }, password, (err, user) => {
+            if (err) {
+                console.log("error occured");
+                console.log(err);
+
+                return res.redirect('Signup');
+
+            }
+            console.log("passport");
+            passport.authenticate('local')(req, res, () => {
+                // use redirect here with flash
+                console.log("user saved ");
 
 
+                return res.redirect("Landing");
+
+
+            });
         });
+
+
         // return res.status(200).send("user registered");
     } catch (err) {
         console.log(err);
