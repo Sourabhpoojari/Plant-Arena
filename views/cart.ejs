@@ -1,0 +1,249 @@
+<%- include("partials/header") %>
+<nav class="navbar navbar-expand-lg fixed-top bg-success" id="myNav">
+    <a class="navbar-brand ml-4 text-light" href="#">Plant Arena</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link ml-4 text-light" href="#">Contact <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ml-4 text-light" href="#">About us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle ml-4 text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Category
+          </a>
+          <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link ml-4 text-light" href="#"><ion-icon name="cart-outline"></ion-icon> (<span id="count">0</span>)</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+       
+        <input class="form-control mr-sm-2 searchInputStyle" type="search" placeholder="Search" aria-label="Search">
+
+        <a  data-toggle="collapse" data-target=".navbar-collapse.show"  class=" my-2 my-sm-0 text-white" type="submit"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+          <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+        </svg></a>
+      </form>
+
+    <% if(typeof user=='undefined' || !user){ %>
+      <a class="nav-item nav-link active text-light" href="/login">login</a>
+      <a class="nav-item nav-link active text-light" href="/signup">Sign up</a>
+   <% }
+   else{ %>
+    <div class="dropdown">
+      
+      <a class="dropdown-toggle mr-5 ml-4 text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <img src="<%= user.avatar %>" alt="" class="userImg"> <%= user.name %>
+      </a>
+      
+      
+      <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" href="/user/logout" style="text-decoration: none;"><svg class="bi bi-box-arrow-in-left mr-2" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M7.854 11.354a.5.5 0 0 0 0-.708L5.207 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0 0 1h9A.5.5 0 0 0 15 8z"/>
+          <path fill-rule="evenodd" d="M2.5 14.5A1.5 1.5 0 0 1 1 13V3a1.5 1.5 0 0 1 1.5-1.5h8A1.5 1.5 0 0 1 12 3v1.5a.5.5 0 0 1-1 0V3a.5.5 0 0 0-.5-.5h-8A.5.5 0 0 0 2 3v10a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-1.5a.5.5 0 0 1 1 0V13a1.5 1.5 0 0 1-1.5 1.5h-8z"/>
+        </svg> Logout</a>
+      </div>
+    </div>
+  <%  } %>
+
+
+
+    </div>
+  </nav>
+
+
+<div class="container mt-5">
+    <h3 class="ml-3 mt-5 pt-5">YOUR PRODUCTS</h3>
+    <div class="row">
+      <div class="col-12">
+          <table class="table table-image">
+            <thead>
+              <tr class="bg-secondary text-light">
+                <th scope="col">#</th>
+                <th scope="col">Product Image</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price Per Item</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+
+                
+                <p><%= cart %></p>
+              
+
+              <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <button class="btn btn-outline-secondary">Update Cart</button>
+                </td>
+
+              </tr>
+
+              <tr class="bg-secondary text-light">
+                <th scope="row"></th>
+                <th scope="row"></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><b>Total :</b></td>
+                <td><b></b></td>
+              </tr>
+
+            </tbody>
+          </table>   
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-6">
+            <form class="form-group" >
+                <div class="mt-5">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm6 5c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                      </svg> <label for="name">Name</label>
+               
+                  <input type="text" class="form-control" value="Swaroop RM" readonly >
+                </div>
+      
+      
+      
+               <div class="mt-4">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383l-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                  </svg> <label for="name"> Email</label>
+             
+                <input type="email" class="form-control" value="swarooprm21@gmail.com" readonly>
+               </div>
+
+               <div class="mt-4">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-telephone" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                  </svg> Phone Number</label>
+             
+                <input type="email" class="form-control mt-2" value="+917899562148">
+               </div>
+      
+
+      
+               <div class="mt-4">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-geo-alt" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M12.166 8.94C12.696 7.867 13 6.862 13 6A5 5 0 0 0 3 6c0 .862.305 1.867.834 2.94.524 1.062 1.234 2.12 1.96 3.07A31.481 31.481 0 0 0 8 14.58l.208-.22a31.493 31.493 0 0 0 1.998-2.35c.726-.95 1.436-2.008 1.96-3.07zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                    <path fill-rule="evenodd" d="M8 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  </svg> Delivery Address </label>
+                <textarea  id="" rows="5" class="form-control mt-2"></textarea>
+               </div>
+      
+              </form>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-center mt-5">
+            <div>
+                <img src="/loginleaves.jpg " style="width: 30%;" alt="">
+                <span><h2>Plant <span class="text-success">Arena</span></h2></span>
+                <div class="mt-5">
+                    <i style="width: 10%;" class="text-muted">
+               
+                        Plant Arena
+                        <br>
+                        Plant arena address
+                        <br>
+                        574227
+                        <br>
+                        plantarena@gmail.com
+                    </i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+  <div class="row">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-4">
+        
+          <a class="btn btn-success btn-block mb-5 mt-3" href="/invoice"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-check mr-5" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H2z"/>
+            <path fill-rule="evenodd" d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+          </svg> PROCEED TO CHECKOUT <b class="ml-5">&#x20B9;590.00 <br> </b></a>
+
+      </div>
+  </div>
+
+<script>
+
+  function getcart(){
+    return localStorage.getItem('cartItem')
+  }
+
+  function onLoad() {
+    let cartno = localStorage.getItem('cartNumber');
+    if (cartno) {
+        count.textContent = cartno;
+    }
+    let cart = localStorage.getItem('cartItem');
+    let total = localStorage.getItem('totalCost');
+    console.log(JSON.parse(cart));
+    console.log(total);
+}
+
+
+onLoad();
+</script>
+
+  <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+
+
+
+  <!-- <script>
+
+      function wcqib_refresh_quantity_increments() {
+    jQuery("div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)").each(function(a, b) {
+        var c = jQuery(b);
+        c.addClass("buttons_added"), c.children().first().before('<input type="button" value="-" class="minus" />'), c.children().last().after('<input type="button" value="+" class="plus" />')
+    })
+}
+String.prototype.getDecimals || (String.prototype.getDecimals = function() {
+    var a = this,
+        b = ("" + a).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
+    return b ? Math.max(0, (b[1] ? b[1].length : 0) - (b[2] ? +b[2] : 0)) : 0
+}), jQuery(document).ready(function() {
+    wcqib_refresh_quantity_increments()
+}), jQuery(document).on("updated_wc_div", function() {
+    wcqib_refresh_quantity_increments()
+}), jQuery(document).on("click", ".plus, .minus", function() {
+    var a = jQuery(this).closest(".quantity").find(".qty"),
+        b = parseFloat(a.val()),
+        c = parseFloat(a.attr("max")),
+        d = parseFloat(a.attr("min")),
+        e = a.attr("step");
+    b && "" !== b && "NaN" !== b || (b = 0), "" !== c && "NaN" !== c || (c = ""), "" !== d && "NaN" !== d || (d = 0), "any" !== e && "" !== e && void 0 !== e && "NaN" !== parseFloat(e) || (e = 1), jQuery(this).is(".plus") ? c && b >= c ? a.val(c) : a.val((b + parseFloat(e)).toFixed(e.getDecimals())) : d && b <= d ? a.val(d) : b > 0 && a.val((b - parseFloat(e)).toFixed(e.getDecimals())), a.trigger("change")
+});
+  </script> -->
+
+<%- include("partials/footer") %>

@@ -1,0 +1,182 @@
+[
+    {
+        "_id": "1001",
+        "productName": "Nephrolepis Exaltata Teddy",
+        "productImage": "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-seeds-marigold-pusa-basanti-desi-flower-seeds-16969023389836_600x600.jpg?v=1601348151",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "plant",
+        "price": "240",
+        "incart": ""
+    },
+    {
+        "_id": "1002",
+        "productName": "Nephrolepis Exaltata Teddy",
+        "productImage": "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-combo-packs-plants-set-of-5-plants-to-promote-happiness-and-joy-16969319121036_600x600.jpg?v=1601349201",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "plant",
+        "price": "360",
+        "incart": ""
+    },
+    {
+        "_id": "1003",
+        "productName": "Nephrolepis Exaltata Teddy",
+        "productImage": "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-plants-peace-lily-spathiphyllum-plant-16969163931788_600x600.jpg?v=1601347816",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "plant",
+        "price": "220",
+        "incart": ""
+    },
+    {
+        "_id": "1025",
+        "productName": "Nephrolepis Exaltata Teddy",
+        "productImage": "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-combo-packs-plants-plant-pack-for-healthy-home-office-16969206628492_600x600.jpg?v=1601348136",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "plant",
+        "price": "140",
+        "incart": ""
+    },
+    {
+        "_id": "1032",
+        "productName": "Nephrolepis Exaltata Teddy",
+        "productImage": "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-bulbs-daffodil-tahiti-4-flower-bulbs_600x600.jpg?v=1601451015",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "plant",
+        "price": "250",
+        "incart": ""
+    },
+    {
+        "_id": "1043",
+        "productName": "Nephrolepis Exaltata Teddy",
+        "productImage": "https://cdn.shopify.com/s/files/1/0047/9730/0847/products/nurserylive-combo-packs-plants-world-environment-day-special-4-plants-pack-16969434529932_600x600.jpg?v=1601348763",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "plant",
+        "price": "190",
+        "incart": ""
+    },
+    {
+        "_id": "1004",
+        "productName": "Tulsi",
+        "productImage": "https://cdn.shopify.com/s/files/1/0047/9730/0847/files/51iIZ1n-lJL_large.jpg?v=1598874255",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Medicinal plant",
+        "price": "270",
+        "incart": ""
+    },
+    {
+        "_id": "1005",
+        "productName": "Alovera",
+        "productImage": "https://timesofindia.indiatimes.com/thumb/msid-68771367,imgsize-227650,width-400,resizemode-4/68771367.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Medicinal plant",
+        "price": "220",
+        "incart": ""
+    },
+    {
+        "_id": "1006",
+        "productName": "Doddapatre",
+        "productImage": "https://www.port.ac.uk/-/media/images/news-events-and-blogs/news/2020/april/rahman-600-400.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Medicinal plant",
+        "price": "210",
+        "incart": ""
+    },
+    {
+        "_id": "1007",
+        "productName": "Mint leaves",
+        "productImage": "https://img-aws.ehowcdn.com/620x500/cpi.studiod.com/www_ehow_com/i.ehow.com/images/a04/u5/ds/plants-used-make-medicine-800x800.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Medicinal plant",
+        "price": "235",
+        "incart": ""
+    },
+    {
+        "_id": "1008",
+        "productName": "Neem",
+        "productImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQl84pSsqOg2xzDwpLL8yTuo22QkYLIwFZlFA&usqp=CAU",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Medicinal plant",
+        "price": "275",
+        "incart": ""
+    },
+    {
+        "_id": "1009",
+        "productName": "Peace Lilly",
+        "productImage": "https://images-na.ssl-images-amazon.com/images/I/81WBSRPBiDL._SL1500_.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "peace plant",
+        "price": "170",
+        "incart": ""
+    },
+    {
+        "_id": "1010",
+        "productName": "Lemon grass",
+        "productImage": "https://images-na.ssl-images-amazon.com/images/I/81FhlMwN8aL._SL1500_.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "peace plant",
+        "price": "260",
+        "incart": ""
+    },
+    {
+        "_id": "1011",
+        "productName": "Lucky bamboo",
+        "productImage": "https://floweraura-blog-img.s3.ap-south-1.amazonaws.com/Plant+Dec+2019-+Dec+2020/grow-bamboo-plant-in-water.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "peace plant",
+        "price": "215",
+        "incart": ""
+    },
+    {
+        "_id": "1012",
+        "productName": "All purpose",
+        "productImage": "https://5.imimg.com/data5/FA/MC/MY-32621050/plastic-fertilizer-bag-500x500.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Fertilizer",
+        "price": "225",
+        "incart": ""
+    },
+    {
+        "_id": "1013",
+        "productName": "Organic manure",
+        "productImage": "https://5.imimg.com/data5/GM/IU/IY/SELLER-9034778/organic-manure-packaging-bag-500x500.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Fertilizer",
+        "price": "165",
+        "incart": ""
+    },
+    {
+        "_id": "1014",
+        "productName": "Potash",
+        "productImage": "https://www.meijer.com/content/dam/meijer/product/0008/91/4600/27/0008914600271_1200.png",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Fertilizer",
+        "price": "215",
+        "incart": ""
+    },
+    {
+        "_id": "1015",
+        "productName": "Garden pebble",
+        "productImage": "https://i.pinimg.com/originals/6d/0c/71/6d0c7159f6a4bb03cfafe07d876fa922.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Pebbles",
+        "price": "230",
+        "incart": ""
+    },
+    {
+        "_id": "1016",
+        "productName": "River pebble",
+        "productImage": "https://images-na.ssl-images-amazon.com/images/I/71hFGjP4GwL._AC_SL1000_.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Pebbles",
+        "price": "265",
+        "incart": ""
+    },
+    {
+        "_id": "1017",
+        "productName": "Marble chips",
+        "productImage": "https://www.plantsguru.com/image/cache/catalog/category/pabbles-400x400.jpg",
+        "productDiscription": "This plants Surround your home with these best pollution killer plants for a clean and healthy environment.",
+        "category": "Pebbles",
+        "price": "290",
+        "incart": ""
+    }
+]

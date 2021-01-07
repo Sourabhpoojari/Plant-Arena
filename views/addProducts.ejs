@@ -1,0 +1,154 @@
+<%- include("partials/header") %>
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+  <a class="navbar-brand ml-4 text-light" href="#"> Plant Arena</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item active">
+        <a class="nav-link ml-4 text-light" href="#">Contact <span class="sr-only">(current)</span></a>
+      </li> -->
+      <!-- <li class="nav-item">
+        <a class="nav-link ml-4 text-light" href="#">About us</a>
+      </li> -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle ml-4 text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Category
+        </a>
+        <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+
+    </ul>
+
+
+    <!-- <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link ml-4 text-light" href="/Login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link ml-4 text-light" href="/Signup">Sign up</a>
+      </li>
+  </ul> -->
+
+  <% if(typeof user=='undefined' || !user){ %>
+    <a class="nav-item nav-link active text-light" href="/login">login</a>
+    <a class="nav-item nav-link active text-light" href="/signup">Sign up</a>
+ <% }
+ else{ %>
+  <div class="dropdown">
+    
+    <a class="dropdown-toggle mr-5 ml-4 text-light" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <img src="<%= user.avatar %>" alt="" class="userImg"> <%= user.name %>
+    </a>
+    
+    
+    <div class="dropdown-menu " aria-labelledby="navbarDropdown">
+      <a class="dropdown-item" href="/user/logout" style="text-decoration: none;"><svg class="bi bi-box-arrow-in-left mr-2" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M7.854 11.354a.5.5 0 0 0 0-.708L5.207 8l2.647-2.646a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708 0z"/>
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0 0 1h9A.5.5 0 0 0 15 8z"/>
+        <path fill-rule="evenodd" d="M2.5 14.5A1.5 1.5 0 0 1 1 13V3a1.5 1.5 0 0 1 1.5-1.5h8A1.5 1.5 0 0 1 12 3v1.5a.5.5 0 0 1-1 0V3a.5.5 0 0 0-.5-.5h-8A.5.5 0 0 0 2 3v10a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-1.5a.5.5 0 0 1 1 0V13a1.5 1.5 0 0 1-1.5 1.5h-8z"/>
+      </svg> Logout</a>
+    </div>
+  </div>
+<%  } %>
+
+
+
+  </div>
+</nav>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-3"></div>
+    <div class="col-lg-6">
+
+      <div class="additionForm">
+        <h4 class="text-center">Add <span class="bg-success text-light pl-2 pr-2">Products</span></h4>
+        <form class="form-group" >
+          <div class="mt-5">
+            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-seam" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7l-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+            </svg> <label for="name" class="ml-2"> Product Name</label>
+         
+            <input type="text" class="form-control ">
+          </div>
+
+         <div class="mt-4">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-image" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+            <path d="M10.648 7.646a.5.5 0 0 1 .577-.093L15.002 9.5V13h-14v-1l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71z"/>
+            <path fill-rule="evenodd" d="M4.502 7a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+          </svg><label class="ml-2">Photo</label>
+          <br>
+          <!-- <img [src]="url" *ngIf="url" class="mb-3 productImg"> -->
+          <label for="image" class=" custom-file-upload form-control bg-success text-white">Choose image</label>
+     
+
+         <input type='file' (change)="onSelectFile($event)" class="form-control custom-file-upload" accept="image/*" id="image">
+         </div>
+
+
+         <div class="mt-4">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+            <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z"/>
+          </svg> <label for="name" class="ml-2"> Quantity</label>
+       
+          <input type="number" class="form-control ">
+         </div>
+
+         <div class="mt-4">
+          <b> &#x20B9;</b> <label for="name" class="ml-2"> Price Per Product</label>
+          
+          <input type="number" class="form-control" >
+         </div>
+
+         <div class="mt-4">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list-nested" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z"/>
+          </svg>
+          <label for="inputState" class="ml-2" >category</label>
+         
+          <select id="inputState" class="form-control">
+            <option  value='plants'>Medicinal Plant</option>
+            <option  value='plants'>Fertilizers</option>
+            <option value='plants'>Pebble</option>
+
+          </select>
+         </div>
+
+         <div class="mt-4">
+          <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+            <path fill-rule="evenodd" d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+          </svg> <label for="name" class="ml-2"> Description </label>
+        
+          <!-- <input type="text" class="form-control " formControlName="description"> -->
+          <textarea  id="" rows="5" class="form-control " formControlName="description"></textarea>
+         </div>
+
+              <button class="btn btn-success btn-block mt-3" >Add Product</button>
+              <!-- <div class="text-center mt-3">
+
+                <div class="spinner-border text-success" role="status">
+
+                  <span class="sr-only">Loading...</span>
+                </div>
+                <p class="text-white">uploading...</p>
+              </div> -->
+        </form>
+      </div>
+       
+      </div>
+
+    <div class="col-lg-3"></div>
+  </div>
+</div>
+<%- include("partials/footer") %>

@@ -5,7 +5,7 @@
 <div class="background">
 
 
-    <nav class="navbar navbar-expand-lg navbar-light customNav">
+    <nav class="navbar navbar-expand-lg fixed-top" id="myNav">
         <a class="navbar-brand ml-4 text-light" href="#">Plant Arena</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -165,51 +165,33 @@
       </div>
       <div class="container">
         <div class="row mt-5 mb-5">
-          <div class="col-lg-4">
+          <% var count =0 %>
+          <% data.forEach((item)=>{ %>
+            
+
+            <%  if(item.category == 'plant' && count < 3){ %>
+              <% count++ %>
+              <div class="col-lg-4">
+                <a href="/detail/<%= item._id %>">
+                 <div class="card" style="width: 18rem;">
+                  <span class="text-light rate" >	 <small><b>&#8377; <%= item.price %>/-</b></small> </span>
+                  
+                   <img src="<%= item.productImage %>" class="card-img-top" alt="...">
+
+                   <img class="priceTag" src="https://static.vecteezy.com/system/resources/thumbnails/001/197/142/small/ribbon.png" alt="">
+                   <h6 class="text-center mt-2 subText"><%=item.productName%></h6>
+                 </div></a>
      
-            <!-- <div class="flip-card">
-              <div class="flip-card-inner">
-                <div class="flip-card-front">
-                  <img src="/productfresh2.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Nephrolepis Exaltata Teddy</h6>
-                </div>
-                <div class="flip-card-back" >
-                  <div class="p-3" style="border: 1px solid green;">
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas repellendus quia quis dicta recusandae consequuntur provident temporibus nemo, laudantium sequi, dolor error blanditiis consectetur dolore illum nesciunt et aspernatur hic!
-                    </p>
-                    <button class="btn btn-success">Know More</button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-            <div class="card" style="width: 18rem;">
-              <img src="/productfresh2.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Nephrolepis Exaltata Teddy</h6>
-
-            </div>
-
-          </div>
-          
-          <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img src="/productfresh1.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Sansevieria trifasciata </h6>
-
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img src="/productfresh3.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Peace Lily, Spathiphyllum</h6>
-
-            </div>
-          </div>
+               </div>
+               <%  } %>
+          <% }) %>
+      
+      
           
         </div>
-        <button class="btn seemorebtn2 mt-4 pr-3" >See More   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <a class="btn seemorebtn2 mt-4 pr-3" href="/more/plant" >See More   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-        </svg></button>
+        </svg></a>
 
       </div>
 
@@ -227,46 +209,59 @@
                </div>
             </div>
             <div class="row mt-5">
-              <div class="col-lg-4">
-                <div class="card p-4" style="width: 18rem;">
-                  <img src="/Ndoc1.jpg" class="card-img-top" alt="...">
-                  <h6 class="text-center mt-2 subText">Jasminum sambac</h6>
-
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="card p-4" style="width: 18rem;">
-                  <img src="/Ndoc2.png" class="card-img-top" alt="...">
-                  <h6 class="text-center mt-2 subText">Rosemary - Plant</h6>
-
-
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="card p-4" style="width: 18rem;">
-                  <img src="/Ndoc3.jpg" class="card-img-top" alt="...">
-                  <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
-                </div>
-              </div>
+              <% var count=0 %>
+              <% data.forEach((item,index)=>{ %>
+               
+                <%  if(item.category == 'Medicinal plant' && count < 3){ %>
+                <% var number = index; %>
+                 <% count ++ %>
+                  <div class="col-lg-4">
+                    <a href="/detail/<%= item._id %>">
+                     <div class="card" style="width: 18rem;">
+                      
+                      <span class="text-light rate" >	 <small><b>&#8377; <%= item.price %>/-</b></small> </span>
+                      <img src="<%= item.productImage %>" class="card-img-top" alt="...">
+                      <img class="priceTag" src="https://static.vecteezy.com/system/resources/thumbnails/001/197/142/small/ribbon.png" alt="">
+                       <h6 class="text-center mt-2 subText"><%=item.productName%></h6>
+                       <p></p>
+                     </div></a>
+         
+                   </div>
+                   <%  } %>
+              <% }) %>
             </div>
           </div>
           <div class="col-lg-3  ">
-            <div class="card mb-5 pb-4 pl-4 pr-4" style="width: 18rem;">
-              <img src="/Ndoc4.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Black Turmeric Plant </h6>
 
-            </div>
-        
-           
-              <div class="card mt-5 p-4" style="width: 18rem;">
-                <img src="/Ndoc5.jpg" class="card-img-top" alt="...">
-                <h6 class="text-center mt-2 subText">Spinach All Green </h6>
 
-              </div>
+            <% var cnt=0 %>
+            <% data.forEach((item,index)=>{ %>
+             
+              <%  if(item.category == 'Medicinal plant' ){ %>
+               <% cnt ++ %>
+                
+               <% if(cnt > 3 && cnt < 6){  %>
+                  <a href="/detail/<%= item._id %>">
+                    <div class="card" style="width: 18rem;">
+                      <span class="text-light rate" >	 <small><b>&#8377; <%= item.price %>/-</b></small> </span>
+                  <img src="<%= item.productImage %>" class="card-img-top" alt="...">
+                  <img class="priceTag" src="https://static.vecteezy.com/system/resources/thumbnails/001/197/142/small/ribbon.png" alt="">
+                      <h6 class="text-center mt-2 subText"><%=item.productName%></h6>
+                      <p></p>
+                    </div></a>
+               <% } %>
+       
+                
+                 <%  } %>
+            <% }) %>
+
+
+
+          
               <div class="text-center">
-                <button class="btn seemorebtn mt-4" style="width: 80%;" >See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <a class="btn seemorebtn mt-4" style="width: 80%;" href="/more/Medicinal plant" >See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-                </svg></button>
+                </svg></a>
               </div>
 
             
@@ -293,33 +288,27 @@
       </div>
       <div class="container">
         <div class="row mt-5">
-          <div class="col-lg-4">
-            <div class="card p-4" style="width: 18rem;">
-              <img src="/peacelily.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">peacelily</h6>
-            </div>
-          </div>
+          <% var count=0 %>
+           <% data.forEach((item)=>{ %>
 
-          <div class="col-lg-4">
-            
-            <div class="card p-4" style="width: 18rem;">
-              <img src="/peace3.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
-            </div>
+            <%  if(item.category == 'peace plant' && count < 3 ){ %>
+              <% count++ %>
+              <div class="col-lg-4">
+                <a href="/detail/<%= item._id %>">
+                 <div class="card" style="width: 18rem;">
+                  <span class="text-light rate" >	 <small><b>&#8377; <%= item.price %>/-</b></small> </span>
+                   <img src="<%= item.productImage %>" class="card-img-top" alt="...">
+                   <img class="priceTag" src="https://static.vecteezy.com/system/resources/thumbnails/001/197/142/small/ribbon.png" alt="">
+                   <h6 class="text-center mt-2 subText"><%=item.productName%></h6>
+                 </div></a>
+     
+               </div>
+               <%  } %>
+          <% }) %>
           </div>
-
-          <div class="col-lg-4">
-            <div class="card p-4" style="width: 18rem;">
-              <img src="/peace2.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
-            </div>
-
-            <div class="text-center">
-              <button class="btn seemorebtn mt-4" style="width: 80%;" >See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-              </svg></button>
-            </div>
-          </div>
+          <a class="btn seemorebtn2 mt-4 pr-3" href="/more/peace plant" >See More   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+          </svg></a>
         </div>
       </div>
     </div>
@@ -343,37 +332,28 @@
       </div>
       <div class="container mt-5">
         <div class="row mt-5">
-          <div class="col-lg-4">
-           
-            <div class="card p-4" style="width: 18rem;">
-              <img src="/manure4.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
-            </div>
-          </div>
+          <% var count=0 %>
+          <% data.forEach((item)=>{ %>
 
-          <div class="col-lg-4">
-            
-            <div class="card p-4" style="width: 18rem;">
-              <img src="/maure3.png" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Lemon Grass - Plant</h6>
-            </div>
-            
-          </div>
+            <%  if(item.category == 'Fertilizer' && count < 3){ %>
+              <% count++ %>
+              <div class="col-lg-4">
+                <a href="/detail/<%= item._id %>">
+                 <div class="card" style="width: 18rem;">
+                  <span class="text-light rate" >	 <small><b>&#8377; <%= item.price %>/-</b></small> </span>
+                  <img src="<%= item.productImage %>" class="card-img-top" alt="...">
+                  <img class="priceTag" src="https://static.vecteezy.com/system/resources/thumbnails/001/197/142/small/ribbon.png" alt="">
+                   <h6 class="text-center mt-2 subText"><%=item.productName%></h6>
+                 </div></a>
+     
+               </div>
+               <%  } %>
+          <% }) %>
 
-          <div class="col-lg-4">
-            
-            <div class="card p-4" style="width: 18rem;">
-              <img src="/manure2.png" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">peacelily</h6>
-            </div>
-
-            <div class="text-center">
-              <button class="btn seemorebtn mt-4" style="width: 80%;" >See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-              </svg></button>
-            </div>
-          </div>
         </div>
+        <a class="btn seemorebtn2 mt-4 pr-3" href="/more/Fertilizer" >See More   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+        </svg></a>
       </div>
     </div>
 
@@ -397,33 +377,31 @@
       </div>
       <div class="container mt-5">
         <div class="row mt-5">
-          <div class="col-lg-4">
-            <div class="card p-4" style="width: 18rem;">
-              <img src="/pebble1.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Garden Pebbles</h6>
-            </div>
-          </div>
+          <% var count=0 %>
+          <% data.forEach((item)=>{ %>
 
-          <div class="col-lg-4">
-            <div class="card p-4" style="width: 18rem;">
-              <img src="/pebble2.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">River Pebbles</h6>
-            </div>
-          </div>
+            <%  if(item.category == 'Pebbles' && count < 3){ %>
+              <% count++ %>
+              <div class="col-lg-4">
+                <a href="/detail/<%= item._id %>">
+                 <div class="card" style="width: 18rem;">
+                  <span class="text-light rate" >	 <small><b>&#8377; <%= item.price %>/-</b></small> </span>
+                  <img src="<%= item.productImage %>" class="card-img-top" alt="...">
+                  <img class="priceTag" src="https://static.vecteezy.com/system/resources/thumbnails/001/197/142/small/ribbon.png" alt="">
+                   <h6 class="text-center mt-2 subText"><%=item.productName%></h6>
+                 </div></a>
+     
+               </div>
+               <%  } %>
+          <% }) %>
+     
 
-          <div class="col-lg-4">
-            <div class="card p-4" style="width: 18rem;">
-              <img src="/pebble3.jpg" class="card-img-top" alt="...">
-              <h6 class="text-center mt-2 subText">Marble Chips</h6>
-            </div>
-
-            <div class="text-center">
-              <button class="btn seemorebtn mt-4" style="width: 80%;" >See More <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-              </svg></button>
-            </div>
-          </div>
         </div>
+
+        <a class="btn seemorebtn2 mt-4 pr-3" href="/more/Pebbles" >See More   <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+        </svg></a>
+
       </div>
     </div>
 
@@ -462,7 +440,9 @@
             <a href="#" class="text-light">GreenGlame Fertilisers</a><br><br>
             <a href="#" class="text-light">natureNest Fertilisers</a><br><br>
             <a href="#" class="text-light">NatureEdge Fertilisers</a>
+            
           </div>
+         
         </div>
 
         <div class="col-lg-3 d-flex justify-content-center">
@@ -474,7 +454,12 @@
             <a href="#"class="mt-4 text-light">plantarena@gmail.com</a>
           </div>
         </div>
+          
       </div>
+      <p class="text-center mt-5"><small class="text-light ">Copyright &#169; 2020 RM Swaroop. All rights reserved</small></p>
+     
+       
+    
     </div>
 
 
@@ -487,8 +472,23 @@
   left: 0, 
   behavior: 'smooth'
 });
-  }
+  };
+
+  
   </script>
+
+<script>
+  $(document).ready(function(){
+    $(window).scroll(function() { // check if scroll event happened
+      if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
+        $(".fixed-top").css("background-color", "#28A745"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+      } else {
+        $(".fixed-top").css("background-color", "transparent"); // if not, change it back to transparent
+      }
+    });
+  });
+</script>
+
 
 
     <script>
