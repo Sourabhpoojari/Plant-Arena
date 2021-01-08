@@ -1,0 +1,101 @@
+.rightsideImg{
+    background-image: url("/login.jpg");
+    height: 720px;
+    width: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(41% 0, 100% 0, 100% 100%, 0 100%);
+    float: right;
+    padding-right: 0% !important;
+    
+
+}
+.rightsideImg1{
+    background-image: url("/login.jpg");
+    height: 830px;
+    width: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(41% 0, 100% 0, 100% 100%, 0 100%);
+    float: right;
+    padding-right: 0% !important;
+    
+
+}
+.alertpos{
+    position: absolute;
+    width: 30%;
+    text-align: center;
+    top: 8%;
+    z-index: +1;
+    left: 70%;
+}
+.textMargin{
+    margin-top: 70%;
+
+    width: 80%;
+}
+.headMargin{
+    position: absolute;
+   padding-left: 8%;
+    margin-top: 30%;
+}
+.heading{
+    font-weight: bolder !important;
+    letter-spacing: 10px;
+    color: #707070 !important;
+}
+.infopara{
+    width: 60%;
+    color: #707070;
+}
+
+.inputForm{
+    border: 1px solid  #707070;
+    margin-top: 10%;
+    width: 90%;
+}
+.inputStyle{
+    border: none;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid black;
+    width: 100%;
+    padding: 5px;
+    border-radius: 0;
+    outline: none;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+
+.svgAlignment{
+    height: 12px;
+}
+.loginLeaves{
+  width: 25%;
+}
+.textColor{
+    color: #12670F;
+}
+.textColor a{
+    color:#12670F !important;
+   
+}
+.textColor b {
+    cursor: pointer;
+}
+.textColor small {
+    font-weight: 500;
+    cursor: pointer;
+}
+.imgAlign{
+    padding-right: 0% !important;
+}
+.row{
+    margin-left: 0;
+    margin-right: 0;
+    overflow: hidden;
+  }
+
