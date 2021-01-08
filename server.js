@@ -1,3 +1,4 @@
+const { name } = require('ejs');
 const user = require('./models/user');
 const express = require('express'),
     app = express(),

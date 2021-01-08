@@ -1,8 +1,6 @@
 const User = require('../models/user'),
     gravatar = require('gravatar'),
     bcrypt = require('bcryptjs'),
-    Token = require('../config/token'),
-    config = require('config'),
     passport = require('passport'),
     {validationResult} = require('express-validator');
 const Swal = require('sweetalert2');
@@ -35,7 +33,7 @@ const createUser = async (req, res, next) => {
             phone,
             avatar
         });
-        User.register(user,password,(err,user)=>{
+        User.register(name,password,(err,user)=>{
             if (err) {
                 return res.redirect('Signup');
             }
