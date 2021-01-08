@@ -7,9 +7,20 @@ const express = require('express'),
     bodyParser = require('body-parser'),
     flash = require('connect-flash'),
     connectDB = require('./config/db');
-
+const mongoose = require('mongoose');
 // DB connection
-connectDB();
+// connectDB();
+mongoose.connect('mongodb://localhost:27017/plantarena', { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
+    if (err) {
+        console.log("cannot connect to mongoDB");
+
+    }
+    else {
+        console.log("connected to mongoDB");
+    }
+
+
+});
 
 app.use(require("express-session")({
     secret: "this is Plant Arena",
@@ -20,12 +31,12 @@ app.use(require("express-session")({
 
 // Middleware
 app.use(flash());
-// app.use(function (req, res, next) {
+app.use(function (req, res, next) {
 
-//     res.locals.error = req.flash("error");
-//     res.locals.success = req.flash("success");
-//     next();
-// })
+    res.locals.error = req.flash("error");
+    res.locals.success = req.flash("success");
+    next();
+})
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");

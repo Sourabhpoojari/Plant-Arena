@@ -12,56 +12,65 @@ const Swal = require('sweetalert2');
 // @desc register user
 // @access Public
 const createUser = async (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        // use flash to display errors
-        return res.status(400).json({ errors: errors.array() });
-    }
     const { name, email, password, phone } = req.body;
-    let user;
+    let errors = [];
 
-    try {
-        user = await User.findOne({ email });
-        if (user) {
-            res.status(400).json({ errors: [{ msg: "User with this email'id already exists" }] });
-        }
-        const avatar = gravatar.url(email, {
-            s: '200',
-            r: 'pg',
-            d: 'mm'
-        });
-        user = new User({
+    if (!name || !email || !password || !phone) {
+        errors.push({ msg: 'Please enter all fields' });
+    }
+
+
+
+    if (password.length < 6) {
+        errors.push({ msg: 'Password must be at least 6 characters' });
+    }
+
+    if (errors.length > 0) {
+        res.render('register', {
+            errors,
             name,
             email,
             phone,
-            avatar
+            password
+
         });
+    } else {
+        User.findOne({ email: email }).then(user => {
+            if (user) {
+                errors.push({ msg: 'Email already exists' });
+                res.render('singup', {
+                    errors,
+                    name,
+                    email,
+                    phone,
+                    password
 
-        User.register({ username: name, email: email, phone: phone }, password, (err, user) => {
-            if (err) {
-                console.log("error occured");
-                console.log(err);
+                });
+            } else {
+                const newUser = new User({
+                    name,
+                    email,
+                    phone,
+                    password
+                });
+                console.log(newUser);
 
-                return res.redirect('Signup');
-
+                bcrypt.genSalt(10, (err, salt) => {
+                    bcrypt.hash(newUser.password, salt, (err, hash) => {
+                        if (err) throw err;
+                        newUser.password = hash;
+                        newUser
+                            .save()
+                            .then(user => {
+                                req.flash("success", "signup successful welcome to plantarena " + user.name);
+                                console.log("user registered successfully");
+                                res.redirect('/Landing');
+                            })
+                            .catch(err => console.log(err));
+                    });
+                });
             }
-            console.log("passport");
-            passport.authenticate('local')(req, res, () => {
-                // use redirect here with flash
-                console.log("user saved ");
-
-
-                return res.redirect("Landing");
-
-
-            });
         });
-
-
-        // return res.status(200).send("user registered");
-    } catch (err) {
-        console.log(err);
-        return res.status(500).send('Server error');
     }
 }
 
@@ -99,27 +108,28 @@ const logIn = async (req, res, next) => {
         if (!match) {
             return res.status(400).json({ errors: [{ msg: "invalid credentials" }] });
         }
-        // admin login
-        if (user.isAdmin) {
 
-        } else {
 
-        }
         await passport.authenticate('local',
             {
-                successRedirect: '/',
-                failureRedirect: '/login'
+
+                successRedirect: '/Landing',
+                failureRedirect: '/Login'
+
             },
             (req, res) => {
-                console.log(user);
+
                 return res.status(201).json({ user });
+
             });
+
 
     } catch (err) {
         console.log(err);
         return res.status(500).send('Server error');
     }
 }
+
 
 // @route GET /logout
 // @desc login user
