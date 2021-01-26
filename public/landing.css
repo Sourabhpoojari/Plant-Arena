@@ -1,273 +1,679 @@
-
+html {
+  scroll-behavior: smooth;
+}
 .background {
-    background-image: url("/Landing.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    animation: imageAnimation 70s linear infinite; 
-    
+  background-image: url("Landing.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  animation: imageAnimation 70s linear infinite; 
+  
 }
 .background:before{
-   
-    content: '';
-    position: absolute;
-    top:0px;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background: rgba(0,0,0,0.4);
+ 
+  content: '';
+  position: absolute;
+  top:0px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.4);
 }
+
+.adminbackground {
+  background-image: url("https://images.unsplash.com/photo-1525279844598-52fd0d3fecc2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTN8fHBsYW50fGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  animation: imageAnimation 70s linear infinite; 
+  
+}
+
 .header{
 position: relative;
 top: 30%;
-  
-   
+
+ 
 }
 .userImg{
-    height: 28px;
-    border-radius: 50%;
+  height: 28px;
+  border-radius: 50%;
 }
 .headStyle{
-    font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', cursive;
 }
 .paraStyle{
-    font-family: 'Source Serif Pro', serif;
+  font-family: 'Source Serif Pro', serif;
+  font-size: 18px;
+  padding-left: 15%;
+  padding-right: 15%;
+  text-align: center;
 }
 
 .searchInputStyle{
-    border: none;
-    outline: none;
-    border-bottom: 1px solid white;
-    color: white;
-    background: transparent;
-    border-radius: 0%;
-  }
+  border: none;
+  outline: none;
+  border-bottom: 1px solid white;
+  color: white !important;
+  background: transparent;
+  border-radius: 0%;
   
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: white;
-    opacity: 1; /* Firefox */
-  }
+}
+
+.searchInputStyle::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  opacity: 1; /* Firefox */
+}
+.searchInputStyle:focus{
+ background-color: transparent;
+  background: transparent;  
+  outline: none !important;   
+  box-shadow: none;
+  border-bottom: 1px solid white;
+}
 .round{
-    width: 25%;
-    border-radius: 100px 100px 100px 100px;
-    color:#12670F;
-    font-weight: 500;
+  width: 25%;
+  border-radius: 100px 100px 100px 100px;
+  color:#12670F;
+  font-weight: 500;
 }
 .customNav{
-    background-color: transparent;
+  background-color: transparent;
 }
-
+.loginLeaves{
+  width: 20%;
+}
 .dropdown-menu{
-    color: black;
+  color: black;
 }
 .bestSellingImg{
-    width: 100%;
+  width: 100%;
 }
 .subText{
-    color:#12670F;
+  color:#12670F;
 }
 .seemorebtn{
-    width: 25%;
-    border-radius: 100px 100px 100px 100px;
-    background-color: #EB5A5A;
-    color:white;
-    font-weight: 500;
-    border: none;
-    box-shadow: -15px 12px 34px -25px  black;
+  width: 25%;
+  border-radius: 100px 100px 100px 100px;
+  background-color: #EB5A5A;
+  color:white;
+  font-weight: 500;
+  border: none;
+  box-shadow: -15px 12px 34px -25px  black;
 
 }
+.flower{
+  
+  background-image: url("https://www.indiafilings.com/learn/wp-content/uploads/2019/12/Aadhaar-Enabled-Fertilizer-Distribution-System.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  height: 80vh;
+  animation: imageAnimation 70s linear infinite; 
+  margin-bottom: 5%;
+  margin-top: 40%;
+}
 .buddha {
-    background-image: url("/buddha1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    animation: imageAnimation 70s linear infinite; 
-    margin-bottom: 5%;
-    margin-top: 5%;
+  background-image: url("buddha1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  animation: imageAnimation 70s linear infinite; 
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 .manure{
-    
-    background-image: url("/maure.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: top;
-    height: 80vh;
-    animation: imageAnimation 70s linear infinite; 
-    margin-bottom: 5%;
-    margin-top: 40%;
+  
+  background-image: url("https://www.indiafilings.com/learn/wp-content/uploads/2019/12/Aadhaar-Enabled-Fertilizer-Distribution-System.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  height: 80vh;
+  animation: imageAnimation 70s linear infinite; 
+  margin-bottom: 5%;
+  margin-top: 40%;
 }
 
 .pebble{
-    background-image: url("/beach.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    height: 80vh;
-    animation: imageAnimation 70s linear infinite; 
-    margin-bottom: 5%;
-    margin-top: 30%;
+  background-image: url("https://img.freepik.com/free-photo/pyramid-small-pebbles-beach-stones-against-background-sea-shore-during-sunset_221513-36.jpg?size=626&ext=jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  animation: imageAnimation 70s linear infinite; 
+  margin-bottom: 5%;
+  margin-top: 30%;
+}
+.vegetable{
+  background-image: url("https://images.unsplash.com/photo-1599907919655-46afff7d94b7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  animation: imageAnimation 70s linear infinite; 
+  margin-bottom: 5%;
+  margin-top: 30%;
+}
+.seed{
+  background-image: url("https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1050&q=80");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  animation: imageAnimation 70s linear infinite; 
+  margin-bottom: 5%;
+  margin-top: 30%;
 }
 .footer{
-    height: 60vh;
-    background-color: rgb(59, 53, 53);
-    
-    margin-top: 30%;
+  height: 60vh;
+  background-color: rgb(59, 53, 53);
+  
+  margin-top: 30%;
 }
 .mainDiv{
-    background-color: white;
+  background-color: white;
 }
 .topspace{
-    margin-top: 22%;
+  margin-top: 22%;
 }
 .subPosition{
-    float: right;
-    margin-right: 10%;
+  float: right;
+  margin-right: 10%;
 }
+.textcolor{
+  color: #EB5A5A;
+}
+
+
 .seemorebtn2{
-    width: 20%;
-    border-radius: 100px 100px 100px 100px;
-    background-color: #EB5A5A;
-    color:white;
-    font-weight: 500;
-    border: none;
-    float: right;
-    margin-right: 5%;
-    box-shadow: -15px 12px 34px -25px  black;
+  width: 20%;
+  border-radius: 100px 100px 100px 100px;
+  background-color: #EB5A5A;
+  color:white;
+  font-weight: 500;
+  border: none;
+  float: right;
+  margin-right: 5%;
+  box-shadow: -15px 12px 34px -25px  black;
 }
 
 
 .samedayImage {
-    background-image: url("/sameday.jpg");
-    background-position: right;
-    background-repeat: no-repeat;
-    width: 118%;
-    height: 250px;
-    border: none;
-    opacity: 0.9;
-    position: relative;
-    top: -10px;
-    left: -10%;
+  background-image: url("sameday.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
+  width: 118%;
+  height: 250px;
+  border: none;
+  opacity: 0.9;
+  position: relative;
+  top: -10px;
+  left: -10%;
 }
 .jumbo{
-    background-color: #ebebe9;
+  background-color: #ebebe9;
 }
 .breathFresh{
-    background-image: url("/breathe.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 350px;
-    position: relative;
+  background-image: url("https://images.unsplash.com/photo-1570636499379-28898e3b34ea?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MjI3fHxmbG93ZXJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60https://images.unsplash.com/photo-1584740715194-c704d32068ef?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTY3fHxmbG93ZXJ8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 350px;
+  position: relative;
 }
 .natureDoctor{
-    background-image: url("/NatureDoctor.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 350px;
-    position: relative;
-    box-shadow: -15px 12px 34px -25px  black;
-    
-    margin-left: 1%;
-    margin-bottom: 2%;
+  background-image: url("/NatureDoctor.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 350px;
+  position: relative;
+  box-shadow: -15px 12px 34px -25px  black;
+  
+  margin-left: 1%;
+  margin-bottom: 2%;
 
 }
 .n_margin{
-    margin-top: 10%;
+  margin-top: 10%;
+}
+.topSpace{
+  margin-top: 30%;
+  border: 1px solid #28a745;
+  padding: 8%;
+}
+.borderless .card{
+  border: none;
 }
 .topmargin{
 position: absolute;
-    margin-top: 10%;
-    text-align: center;
+  margin-top: 10%;
+  text-align: center;
 }
 .card_change .card{
-    border: none;
+  border: none;
 }
 .card{
-    margin: 10%;
-    width: 95% !important;
-    border-radius: 15px 15px 15px 15px;
-    box-shadow: -15px 12px 34px -25px  black;
+  margin: 10%;
+  width: 95% !important;
+  border-radius: 15px 15px 15px 15px;
+  box-shadow: -15px 12px 34px -25px  black;
 }
 .card:hover {
-    transform: scale(1.03);
-    transition: all 500ms ease;
-    -o-transition: all 500ms ease;
-    -ms-transition: all 500ms ease;
-    -moz-tranistion: all 500ms ease;
+  transform: scale(1.03);
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-tranistion: all 500ms ease;
 
-   }
+ }
 
-   .flip-card {
-    background-color: transparent;
-    width: 300px;
-   
-   
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
-  
-  /* This container is needed to position the front and back side */
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  }
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  /* Position the front and back side */
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
-    backface-visibility: hidden;
-  }
-  
-  /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  }
-  
-  /* Style the back side */
-  .flip-card-back {
+ .flip-card {
+  background-color: transparent;
+  width: 300px;
  
-    transform: rotateY(180deg);
+ 
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+
+  transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+
+
+.customCard{
+  background-color: #2a2a2a;
+
+  border-radius: 15px 15px 15px 15px;
+ box-shadow: -15px 12px 34px -25px  black;
+}
+
+input[type="file"] {
+  display: none;
+
+}
+
+
+.table-image td,
+.table-image th {
+  vertical-align: middle;
+}
+
+.checkoutImg{
+  height: 150px;
+  width: 150px;
+  
+    box-shadow: -15px 12px 34px -25px  black;
+}
+
+.productImg{
+  height: 70px;
+  width: 70px;
+  border-radius: 15px 15px 15px 15px;
+  border: 2px solid #28a745 ;
+    box-shadow: -15px 12px 34px -25px  black;
+}
+.dproduct{
+  height: 100px;
+  width: 100px;
+  box-shadow: -15px 12px 34px -25px  black;
+}
+.additionForm{
+    padding: 8%;
+    border: 1px solid  #28a745 ;
+    margin-bottom: 5%;
+}
+@media screen and (max-width: 360px){
+  .customCard{
+    width: 100%;
   }
+  .container{
+    width: 100%;
+  }
+}
+
+.quantity {
+  display: inline-block;
+
+border: 1px solid #6c757d;
+
+}
+#count{
+  font-size: 12px;
+}
+
+ 
+ .quantity .input-text.qty {
+  width: 35px;
+  height: 39px;
+  padding: 0 5px;
+  text-align: center;
+  background-color: transparent;
+  border: none;
+ }
+ 
+ .quantity.buttons_added {
+  text-align: left;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: top; }
+ 
+ .quantity.buttons_added input {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top;
+  box-shadow: none;
+ }
+ 
+ .quantity.buttons_added .minus,
+ .quantity.buttons_added .plus {
+  padding: 7px 10px 8px;
+  height: 41px;
+  background-color: #eee;
+  border:none;
+  cursor:pointer;}
+ 
+ .quantity.buttons_added .minus {
+  border-right: 0; }
+ 
+ .quantity.buttons_added .plus {
+  border-left: 0; }
+ 
+ .quantity.buttons_added .minus:hover,
+ .quantity.buttons_added .plus:hover {
+  background-color: #6c757d;
+  color: white;
+
+}
+ 
+ .quantity input::-webkit-outer-spin-button,
+ .quantity input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0; }
+  
+  .quantity.buttons_added .minus:focus,
+ .quantity.buttons_added .plus:focus {
+  outline: none; }
+ 
+
 
 
 @media screen and (max-width: 430px){
-    .round{
-        width: 80%;
-        border-radius: 100px 100px 100px 100px;
-        color:#12670F;
-        font-weight: 500;
-    }
+  .round{
+      width: 80%;
+      border-radius: 100px 100px 100px 100px;
+      color:#28a745;
+      font-weight: 500;
+  }
 
 }
 
 
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid white;
+  background-color: #28a745;
+  color: white !important;
+}
+#myInput::placeholder{
+  color: white !important;
+}
+
+#myInput:focus {outline: 3px solid #28a745;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+  height: 400px;
+  overflow: scroll;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+
+.show {display: block;}
 
 
 
 
 
 
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 35px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+
+form #decrease {
+  margin-right: -4px;
+  margin-top: -5px;
+  border-radius: 8px 0 0 8px;
+}
+
+form #increase {
+  margin-top: -5px;
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+form #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height:35px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.cartinput{
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-top: 1px;
+  width: 40px;
+  height:36px;
+}
+
+.value-button-cart {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 35px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.prodDetail{
+  position: absolute;
+  left: 45%;
+  width: 20%;
+  margin-top: -12%;
+  padding: 10px;
+  border-radius: 10%;
+  box-shadow: -15px 12px 34px -25px  black;
+}
+.prodImageprod{
+  position: relative;
+  left: 10%;
+  border-radius: 10%;
+  box-shadow: -15px 12px 34px -25px  black;
+}
+.prodImageaddress{
+  position: absolute;
+  left: 70%;
+ margin-top: -21%;
+ width: 15%;
+
+ padding: 10px;
+ border-radius: 10%;
+ 
+ box-shadow: -15px 12px 34px -25px  black;
+}
+
+.prodImageaddress:hover {
+  transform: scale(1.03);
+  transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-tranistion: all 500ms ease;
+
+ }
 
 
 
+.horizontal .progress-bar {
+  float: left;
+  height: 45px;
+  width: 100%;
+  padding: 12px 0;
+  background-color: transparent;
+}
 
+.horizontal .progress-track {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background: #ebebeb;
+}
+
+.horizontal .progress-fill {
+  position: relative;
+  background:#28a745;
+  height: 20px;
+  width: 50%;
+  color: #fff;
+  text-align: center;
+  font-family: "Lato","Verdana",sans-serif;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.rounded .progress-track,
+.rounded .progress-fill {
+  border-radius: 3px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+}
 
 

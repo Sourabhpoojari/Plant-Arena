@@ -1,6 +1,6 @@
 .rightsideImg{
     background-image: url("/login.jpg");
-    height: 720px;
+    height: 753px;
     width: 80%;
     background-repeat: no-repeat;
     background-position: center;
@@ -69,6 +69,7 @@
     box-shadow: none !important;
 }
 
+  
 
 .svgAlignment{
     height: 12px;
@@ -98,4 +99,28 @@
     margin-right: 0;
     overflow: hidden;
   }
+.priceTag{
+    position: absolute;
+    height: 90px;
+    width: 50%;
+    top: -2%;
+    left: 62%;
+    z-index: +1;
+    transform: rotate(90deg);
+    
+}
 
+.rate{
+    position: absolute;
+    right: 4%;
+    top: 10%;
+    z-index: +2;
+}
+
+  
+.logineye{
+    position: absolute;
+    left: 72%;
+    margin-top: -5%;
+    cursor: pointer;
+}

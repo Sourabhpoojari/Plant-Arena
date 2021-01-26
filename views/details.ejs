@@ -1,0 +1,159 @@
+<%- include("partials/header") %>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-5">
+            <div class="card">
+           
+                <img src="<%= product.productImage %>" data-zoom-image="<%= product.productImage %>" id="zoom" class="card-img-top" alt="...">
+
+              </div>
+        </div>
+        <div class="col-lg-1"></div>
+        <div class="col-lg-6 mt-5 d-flex justify-content-end">
+            <div class="container mt-5">
+                
+                <h4 class="text-center text-success" id="prodName"><%= product.productName %></h4>
+                <h3 class="text-success" >&#x20B9; <b id="price"><%= product.price %></b></h3>
+                <h6 class="text-muted">(MRP Inclusive of all taxes)</h6>
+                <ul>
+                    <li>Shipping Rs 79 for entire order.</li>
+                    <li>Cash on delivery</li>
+                    <li>Dispatch in 5-8 Days</li>
+                </ul>
+               
+                      <div style="width: 30%;">
+                        <h6>Instock : <%=product.quantity%></h6>
+                        <h6 class="text-muted">Quantity</h6>
+                          <div >
+                            <form method="POST" action="/Landing/<%=product._id%>/addcart">
+                              <select class="custom-select" id="quantity" name="quantity">
+                                  
+                               <% for (var i=1;i< product.quantity ;i++){ %>
+                                    <option value="<%= i %>"><%= i %></option>
+                                <% } %>
+                                                              
+                              </select>                                                                        
+                      </div>
+
+                    
+                        </div>
+              
+                       <% var incart=false
+                        items.forEach((ele)=>{
+                          var val1=ele.product[0].toString();
+                          var val2=product._id.toString();
+                          if(val1==val2){
+                            
+                            incart=true
+                          }
+                        }) %>
+                        
+
+                        <% if(incart){ %>
+                          <a href="/cart"class="btn btn-outline-success btn-block mt-4" id="addtocart" ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-plus mr-2 align-items-center" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                            <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z"/>
+                          </svg> Go to cart</a>
+                      <%  }
+                        else { %>
+                          <button class="btn btn-outline-success btn-block mt-4" id="addtocart" ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-plus mr-2 align-items-center" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                            <path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z"/>
+                          </svg> Add to cart</button>
+                        <% } %>
+                            </form>   
+                        <a class="btn btn-success btn-block" onclick="oncheckout('<%= product.quantity%>')" href="/Landing/<%=product._id%>/checkout"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-check mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+                            <path fill-rule="evenodd" d="M11.354 5.646a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+                          </svg> Buy Now</a>
+                     
+                </div>
+          
+            </div>
+        </div>
+
+    <div class="mt-3">
+        <h5 class="text-success">Description</h5>
+    <p><%= product.productDiscription %></p>
+    </div>
+
+    <% if(product.category!='Seed' && product.category!='Fertilizer' && product.category!='Pebble'){ %>
+      <div class="mt-5">
+        <h5 class="text-success">Maintains Tip</h5>
+        <ul>
+            <li>Drainage is extremely important for your plant. Ideally, a pot should have a hole in the bottom so that excess water can drain out of the soil and collect in a tray underneath the pot.</li>
+            <li>It’s better to under water your plants than to overwater. Too much water can lead to root rot..</li>
+            <li>It’s fine ​​​to​ ​skip the fertilizer. Too much fertilizer can do more harm than good. Houseplants tend to not need fertilizer as often as outdoor plants do.</li>
+            <li>Remove brown and dying leaves from your house plants as soon as possible.</li>
+        </ul>
+ 
+    </div>
+    <% } %>
+
+    
+    <div class="mt-5">
+        <h5 class="text-success">Related Products</h5>
+        <div class="conatiner">
+          <div class="row mt-5">
+         
+            
+            <% var count=0 
+           data.forEach((ele)=>{
+               if(JSON.stringify(ele._id)!= JSON.stringify(product._id) && ele.category==product.category && count < 3){ %>
+   
+             
+              <div class="col-lg-4">
+                <a href="/Landing/<%= ele._id %>">
+                 <div class="card" style="width: 18rem;">
+                  
+                  <span class="text-light rate" >	 <small><b>&#8377; <%= ele.price %>/-</b></small> </span>
+                  <img src="<%= ele.productImage %>" class="card-img-top" alt="...">
+                  <img class="priceTag" src="https://static.vecteezy.com/system/resources/thumbnails/001/197/142/small/ribbon.png" alt="">
+                   <h6 class="text-center mt-2 subText"><%=ele.productName%></h6>
+                   <p></p>
+                 </div></a>
+     
+               </div>
+              <% count++ 
+            }
+            }) %>
+          </div>
+        </div>
+ 
+    </div>
+
+  </div>
+
+<script>
+
+  function oncheckout(prodquant){
+      localStorage.clear();
+    var quantity=document.getElementById('quantity').value;
+    var price=document.getElementById('price').textContent;
+   
+    quantity=parseInt(quantity);
+
+    
+    localStorage.setItem('quantity',quantity);
+    localStorage.setItem('price',price);
+    localStorage.setItem('totalquant',prodquant);
+
+  }
+</script>
+
+
+<script>
+  
+    $("#zoom").elevateZoom(
+        {zoomWindowPosition: 1, zoomWindowOffetx: 10 , borderSize: 0, scrollZoom : true}
+    )
+</script>
+<script>
+  $(document).ready(function(){
+   
+
+        $(".fixed-top").css("background-color", "#28A745"); 
+  });
+</script>
+
+<%- include("partials/footer") %>

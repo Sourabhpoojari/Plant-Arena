@@ -1,0 +1,177 @@
+
+    <%- include("partials/adminheader") %>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
+
+
+
+  <body>
+    <div class="adminbackground">
+      <div class="container mt-5" >
+        <div class="row borderless mt-5" data-aos="fade-right">
+            <div class="col-lg-4">
+               <a href="/admin/inStock" class="text-success">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Products in stock</h5>
+                    <h1 class="text-center display-1 text-success"><%= inStock %></h1>
+                  </div>
+                </div>
+               </a>
+            </div>
+
+            <div class="col-lg-4">
+              <a href="/admin/delivery" class="text-success">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Ordered Products</h5>
+                    <h1 class="text-center display-1 text-success"><%= orders %></h1>
+                  </div>
+                </div>
+              </a>
+
+            </div>
+
+            <div class="col-lg-4">
+               <a href="/admin/outStock" class="text-success">
+                <div class="card" style="width: 18rem;">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">Products out of stock</h5>
+                    <h1 class="text-center display-1 text-success" ><%= outStock %></h1>
+                  </div>
+                </div>
+               </a>
+            </div>
+        </div>
+       <div>
+        <div class="row">
+          <div class="col-lg-12 bg-light p-3">
+            <div class="container horizontal rounded mt-5">
+              <p class="text-center"><span class="text-success"><%=productSold%></span>/<%=totalQuantity%> products are Ordered.</p>
+              <% var value=(productSold/totalQuantity)*100 %>
+              <div class="progress-bar horizontal">
+                <div class="progress-track">
+                  <div class="progress-fill">
+                    <span><%=value%>%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+      
+        <div class="row borderless " data-aos="fade-right">
+         
+          <div class="col-lg-4"></div>
+                    <div class="col-lg-5">
+                      <a href="/admin/delivery" class="text-success">
+                        <div class="card" style="width: 18rem;">
+                          <div class="card-body">
+                            <img src="https://www.vippng.com/png/detail/409-4094973_delivery-clipart-home-delivery-logo-free-delivery-order.png" style="width: 40%;" alt="">
+                            <h5 class="card-title text-center">Check Orders!!!</h5>
+                            
+                          </div>
+                        </div>
+                      </a>
+          
+                    </div>
+                   
+          
+                   
+                </div>
+
+        <div class="row borderless " data-aos="fade-right">
+         
+
+          <div class="col-lg-6 d-flex">
+            <a href="/admin/addProduct" class="text-success">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/box_closed_add.png" style="width: 40%;" alt="">
+                  <h5 class="card-title text-center">Add new products to the arena</h5>
+                  
+                </div>
+              </div>
+            </a>
+
+          </div>
+          <div class="col-lg-6">
+            <a href="/admin/editProduct" class="text-success">
+              <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <img src="https://d1nhio0ox7pgb.cloudfront.net/_img/v_collection_png/512x512/shadow/box_edit.png" style="width: 40%;" alt="">
+                  <h5 class="card-title text-center">Edit products of arena</h5>
+                  
+                </div>
+              </div>
+            </a>
+
+          </div>
+
+         
+      </div>
+
+
+
+
+
+      
+    </div>
+ 
+   
+      
+  </div>
+<script>
+    $(function() {
+    function count($this){
+        var current = parseInt($this.html(), 10);
+        $this.html(++current);
+        if(current !== $this.data('count')){
+            setTimeout(function(){count($this)}, 50);
+        }
+    }        
+  $("h1").each(function() {
+      $(this).data('count', parseInt($(this).html(), 10));
+      $(this).html('0');
+      count($(this));
+  });
+});
+</script>
+
+<script>
+$('.horizontal .progress-fill span').each(function(){
+  var percent = $(this).html();
+  $(this).parent().css('width', percent);
+});
+
+
+$('.vertical .progress-fill span').each(function(){
+  var percent = $(this).html();
+  var pTop = 100 - ( percent.slice(0, percent.length - 1) ) + "%";
+  $(this).parent().css({
+    'height' : percent,
+    'top' : pTop
+  });
+});
+</script>
+
+<script>
+    AOS.init({
+        duration:800
+    });
+  </script>
+
+
+    <script>
+      $(document).ready(function(){
+       
+    
+            $(".fixed-top").css("background-color", "#28A745"); 
+      });
+    </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" />
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </body>
+  <%- include("partials/footer") %>

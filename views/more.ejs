@@ -1,0 +1,77 @@
+<%- include("partials/header") %>
+<% if(product[0].category=='Flowering Plant'){ %>
+<div class="jumbotron" style="background-image: url('https://images.unsplash.com/photo-1596808119772-d3ad38f5d8b2?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTIwfHxmbG93ZXIlMjBwbGFudHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');background-repeat: no-repeat;background-size: cover;height: 350px;">
+   <h1 class="display-3 mt-5 text-light"><%= product[0].category %>s</h1>
+     <p class="text-light p-3">If you’re looking to add some vibrancy to your life, our flowering plant packs might do the trick. These noticeable flowers will bring you joy and reduce stress from your life while sprucing up your surroundings.</p>
+</div>
+<% }  else if(product[0].category=='Medicinal Plant'){ %>
+  <div class="jumbotron" style="background-image: url('https://www.port.ac.uk/-/media/images/news-events-and-blogs/news/2020/april/rahman-600-400.jpg');background-repeat: no-repeat;background-size: cover;height: 350px; background-position: center;">
+     <h1 class="display-3 mt-5 text-light"><%= product[0].category %>s</h1>
+       <p class="text-light p-3">If you’re looking to add some vibrancy to your life, our flowering plant packs might do the trick. These noticeable flowers will bring you joy and reduce stress from your life while sprucing up your surroundings.</p>
+  </div>
+  <% }  else if(product[0].category=='Peace Plant'){ %>
+    <div class="jumbotron" style="background-image: url('https://images.unsplash.com/photo-1434332253042-50df2f9f7b39?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8YnVkZGhhJTIwcGxhbnR8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');background-repeat: no-repeat;background-size: cover;height: 350px;background-position: center; ">
+       <h1 class="display-3 mt-5 text-light"><%= product[0].category %>s</h1>
+         <p class="text-light p-3">If you’re looking to add some vibrancy to your life, our flowering plant packs might do the trick. These noticeable flowers will bring you joy and reduce stress from your life while sprucing up your surroundings.</p>
+    </div>
+    <% }  else if(product[0].category=='Vegetable Plant'){ %>
+      <div class="jumbotron" style="background-image: url('https://images.unsplash.com/photo-1511993226957-cd166aba52d8?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mjl8fHZlZ2V0YWJsZXN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');background-repeat: no-repeat;background-size: cover;height: 350px;background-position: center; ">
+         <h1 class="display-3 mt-5 text-light"><%= product[0].category %>s</h1>
+           <p class="text-light p-3">If you’re looking to add some vibrancy to your life, our flowering plant packs might do the trick. These noticeable flowers will bring you joy and reduce stress from your life while sprucing up your surroundings.</p>
+      </div>
+      <% } else if(product[0].category=='Seed'){ %>
+        <div class="jumbotron" style="background-image: url('https://images.unsplash.com/photo-1549984443-c905282e393f?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fHNwcm91dHN8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');background-repeat: no-repeat;background-size: cover;height: 350px;background-position: center; ">
+           <h1 class="display-3 mt-5 text-light"><%= product[0].category %>s</h1>
+             <p class="text-light p-3">If you’re looking to add some vibrancy to your life, our flowering plant packs might do the trick. These noticeable flowers will bring you joy and reduce stress from your life while sprucing up your surroundings.</p>
+        </div>
+        <% } else if(product[0].category=='Fertilizer'){ %>
+          <div class="jumbotron" style="background-image: url('https://www.almanac.com/sites/default/files/styles/primary_image_in_article/public/image_nodes/fertilizer-shutterstock_1087283084.jpg?itok=H85ZhFRD');background-repeat: no-repeat;background-size: cover;height: 350px;background-position: bottom; ">
+             <h1 class="display-3 mt-5 text-light"><%= product[0].category %>s</h1>
+               <p class="text-light p-3">If you’re looking to add some vibrancy to your life, our flowering plant packs might do the trick. These noticeable flowers will bring you joy and reduce stress from your life while sprucing up your surroundings.</p>
+          </div>
+          <% } else if(product[0].category=='Pebble'){ %>
+            <div class="jumbotron" style="background-image: url('https://images.unsplash.com/photo-1560832497-3f0873205cff?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTAxfHxwZWJibGVzfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');background-repeat: no-repeat;background-size: cover;height: 350px;background-position: center; ">
+               <h1 class="display-3 mt-5 text-light"><%= product[0].category %>s</h1>
+                 <p class="text-light p-3">If you’re looking to add some vibrancy to your life, our flowering plant packs might do the trick. These noticeable flowers will bring you joy and reduce stress from your life while sprucing up your surroundings.</p>
+            </div>
+            <% } %>
+<div class="container mt-5">
+    <div class="row mt-5">
+        <% product.forEach((item)=>{ %>
+            <div class="col-lg-4">
+                <a href="/Landing/<%= item._id %>">
+                 <div class="card" style="width: 18rem;">
+                  <span class="text-light rate" >	 <small><b>&#8377; <%= item.price %>/-</b></small> </span>
+                   <img src="<%= item.productImage %>" class="card-img-top" alt="...">
+                   <img class="priceTag" src="https://static.vecteezy.com/system/resources/thumbnails/001/197/142/small/ribbon.png" alt="">
+                   <h6 class="text-center mt-2 subText"><%=item.productName%></h6>
+                 </div></a>
+     
+               </div>
+      <%  }) %>
+    </div>
+</div>
+<script>
+  function scrollWin() {
+    window.scroll({
+  top: 700, 
+  left: 0, 
+  behavior: 'smooth'
+});
+  };
+
+  
+  </script>
+
+<script>
+  $(document).ready(function(){
+    $(window).scroll(function() { // check if scroll event happened
+      if ($(document).scrollTop() > 50) { // check if user scrolled more than 50 from top of the browser window
+        $(".fixed-top").css("background-color", "#28A745"); // if yes, then change the color of class "navbar-fixed-top" to white (#f8f8f8)
+      } else {
+        $(".fixed-top").css("background-color", "transparent"); // if not, change it back to transparent
+      }
+    });
+  });
+</script>
+<%- include("partials/footer") %>

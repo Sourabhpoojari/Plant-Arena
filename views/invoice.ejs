@@ -1,0 +1,150 @@
+<%- include("partials/header") %>
+
+<div class="row p-5 mt-5" id="mycontent">
+    <div class="col-lg-12 d-flex justify-content-between">
+        <div>
+            <img src="/loginleaves.jpg " style="width: 30%;" alt="">
+            <span><h2>Plant <span class="text-success">Arena</span></h2></span>
+        </div>
+     <div>
+        <h1 class="text-center"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-receipt-cutoff" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M1.92.506a.5.5 0 0 1 .434.14L3 1.293l.646-.647a.5.5 0 0 1 .708 0L5 1.293l.646-.647a.5.5 0 0 1 .708 0L7 1.293l.646-.647a.5.5 0 0 1 .708 0L9 1.293l.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .801.13l.5 1A.5.5 0 0 1 15 2v13h-1V2.118l-.137-.274-.51.51a.5.5 0 0 1-.707 0L12 1.707l-.646.647a.5.5 0 0 1-.708 0L10 1.707l-.646.647a.5.5 0 0 1-.708 0L8 1.707l-.646.647a.5.5 0 0 1-.708 0L6 1.707l-.646.647a.5.5 0 0 1-.708 0L4 1.707l-.646.647a.5.5 0 0 1-.708 0l-.509-.51L2 2.118V15H1V2a.5.5 0 0 1 .053-.224l.5-1a.5.5 0 0 1 .367-.27zM0 15.5a.5.5 0 0 1 .5-.5h15a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5z"/>
+            <path fill-rule="evenodd" d="M3 4.5a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 1 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5zm8-8a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z"/>
+          </svg></h1>
+        <h2>Invoice</h2>
+     </div>
+    </div>
+    <hr class="col-lg-12">
+    <div class="col-lg-12 d-flex justify-content-between mt-5">
+        <strong>Date : <span class="text-muted" id="date"></span> </strong>
+        <strong>Invoice No. : <span class="text-muted"><%= bill._id %></span> </strong>
+    </div>
+    <hr class="col-lg-12">
+
+    <div class="col-lg-12 d-flex justify-content-between mt-5">
+        <strong>Invoiced To :</strong>
+        <strong>Pay To :</strong>
+    </div>
+   
+    <div class="col-lg-12 d-flex justify-content-between mt-2">
+        <i style="width: 10%;" class="text-muted">
+            
+            <%=bill.name%> <br>
+            <%= bill.email %> <br>
+            <%= bill.address %> <br>
+            <%=bill.pincode %>
+           
+        </i>
+
+        <i style="width: 10%;" class="text-muted">
+           
+            Plant Arena <br>
+            Plant arena address <br>
+            plantarena@gmail.com <br>
+            574227
+        </i>
+    </div>
+   
+    
+    <div class="col-lg-12 mt-5">
+        <table class="table table-image">
+            <thead class="bg-success">
+              <tr class="text-light">
+                <th scope="col">Product Image</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price Per Product</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Total price</th>
+              </tr>
+            </thead>
+            <tbody>
+              
+              <% var total=0 %>
+              <% bill.products.forEach((item)=>{ %>
+                <% total=total+item.totalPrice %>
+                <tr>
+                  <td><img src="<%= item._id.productImage %>" class="checkoutImg" alt="product image"></td>
+                  <td><b><%= item._id.productName %></b></td>
+                  <td><b>&#x20B9; <%= item._id.price %></b></td>
+                  <td><b><%= item.totalQuantity %></b></td>
+                  <td><b>&#x20B9; <%= item.totalPrice %></b></td>
+                </tr>
+
+              <% }) %>
+             
+                
+                  <tr class="bg-success text-light">
+                    <td colspan="3"></td>
+                    <td><b>Total : </b></td>
+                    <td><b>&#x20B9; <%= total %></b></td>
+                  </tr>
+           
+          
+ 
+         
+            </tbody>
+          </table>
+    </div>
+</div>
+
+<div class="text-center">
+  <p><i>Thank you for ordering, your product will be arriving soon. Method of payment, cash on delivery.</i></p>
+    <a onclick="generatePdf()" class="btn btn-success btn-sm mb-5" ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-download mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+        <path fill-rule="evenodd" d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+      </svg> Download Invoice</a> 
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js" integrity="sha512-s/XK4vYVXTGeUSv4bRPOuxSDmDlTedEpMEcAQk0t/FMd9V6ft8iXdwSBxV0eD60c6w/tjotSlKu9J2AAW1ckTA==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.0/polyfills.es.min.js" integrity="sha512-3qHB0+zNv9n56Jo2UQhaqC8Apdet54UQ0SrjxzF3INtqSY6wiIhVXu3BjAdEb2SZovZyuiZe+hAcfRZqmvADEw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.13/jspdf.plugin.autotable.min.js" integrity="sha512-AtJGnumoR/L4JbSw/HzZxkPbfr+XiXYxoEPBsP6Q+kNo9zh4gyrvg25eK2eSsp1VAEAP1XsMf2M984pK/geNXw==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+
+
+<script>
+var content=document.querySelector('#mycontent')
+
+function generatePdf(){
+  var imgData;
+  html2canvas($('#mycontent'),{
+    useCORS:true,
+    onrendered:function(canvas){
+      imgData=canvas.toDataURL('image/png');
+
+      var doc=new jsPDF('p','pt','a4');
+      doc.addImage(imgData,'PNG', 0, 0, 600, 500);
+
+      doc.save('plantArenaInvoice.pdf')
+      window.open(imgData)
+    }
+  })
+}
+
+</script>
+
+<script>
+      n =  new Date();
+y = n.getFullYear();
+m = n.getMonth() + 1;
+d = n.getDate();
+document.getElementById("date").innerHTML = d + "/" + m + "/" + y;
+</script>
+
+
+
+<script>
+  $(document).ready(function(){
+   
+
+        $(".fixed-top").css("background-color", "#28A745"); 
+  });
+</script>
+
+
+
+<%- include("partials/footer") %>

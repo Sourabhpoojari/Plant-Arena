@@ -1,13 +1,5 @@
-<%- include("partials/header") %>
+<%- include("partials/nonav") %>
 <div>
-    <!-- <div class="rightsideImg d-flex justify-content-center">
-        <div class="text-light textMargin text-center">
-            <h3 class="pl-5">Plant Arena</h3>
-            <p class="pl-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, esse veritatis quam dicta ullam impedit reprehenderit explicabo officiis aliquam. Facere eveniet qui, amet nam unde ea earum. Saepe, dicta iste.</p>
-        </div>
-    </div> -->
- 
-
     <div>
         <div class="row">
             <div class="col-lg-4">
@@ -16,47 +8,40 @@
                     <br>
                     <h1 class="display-1 heading">ARENA</h1>
                     <p class="infopara">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam dignissimos  Aliquam dignissimos 
+                        Get your favourite plants home and decorate your place as per your choice.
                     </p>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="inputForm pt-5 pr-5 pl-5 mb-3">
-                    <form action="/user" method="POST">
+                    <form action="/signup" method="POST">
                         <div class="text-center textColor">
                             <h5 class="animate__animated  animate__lightSpeedInLeft" >Welcome to Plant Arena!</h5>
                             <img src="/loginleaves.jpg" class="loginLeaves" alt="">
 
                             <h6>Register here</h6>
-                            <!-- <img src="/email-i.svg" alt="" class="svgAlignment">
-                            <img src="/password-i.svg" alt="" class="svgAlignment"> -->
+
                            </div>
                            <span> <label for="name"><small> <img src="/singleDark.svg" alt="" class="svgAlignment"> User Name</small></label></span>
                             <div class="form-group">
-                                <input class="form-control" type="text" name="name" placeholder="User Name">
+                                <input class="form-control" type="text" name="username" placeholder="User Name" required minlength="3" maxlength="35">
                             </div>
                             
                            <span> <label for="email"><small> <img src="/email-i.svg" alt="" class="svgAlignment"> Email Address</small></label></span>
                             <div class="form-group">
-                                <input class="form-control" type="email" name="email" placeholder="Email Address">
+                                <input class="form-control" type="email" name="email" placeholder="Email Address" required minlength="7" maxlength="40">
                             </div>
 
                             <span> <label for="phone"><small> <img src="/call-24px.svg" alt="" class="svgAlignment"> Phone Number</small></label></span>
                             <div class="form-group">
-                                <input class="form-control" type="phone" name="phone" placeholder="Phone Number">
+                                <input class="form-control" type="phone" name="phone" placeholder="Phone Number" required >
                             </div>
 
                            <span> <label for="password"><small><img src="/password-i.svg" alt="" class="svgAlignment"> Password</small></label></span>
                                 <div class="form-group">
-                                    <input class="form-control" type="password" name="password" placeholder="Password">
+                                    <input class="form-control" type="password" name="password" id="password" placeholder="Password" required minlength="3" maxlength="30">
+                                    <i class="far fa-eye logineye"  id="togglePassword"></i>
                                 </div>
-
-                            <!-- <span> <label for="confirm"><small><img src="/password-i.svg" alt="" class="svgAlignment"> Confirm Password</small></label></span>
-                                <div class="form-group">
-                                    <input class="form-control" type="password" name="" placeholder="Confirm Password">
-                                </div> -->
-
-
                             <div class="text-center mt-3">
                                 <button class="btn btn-success btn-block">SIGN UP</button>
                             </div>
@@ -72,7 +57,7 @@
                 <div class="rightsideImg1 d-flex justify-content-center">
                     <div class="text-light textMargin text-center">
                         <h3 class="pl-5">Plant Arena</h3>
-                        <p class="pl-5">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad, esse veritatis quam dicta ullam impedit reprehenderit explicabo officiis aliquam. Facere eveniet qui, amet nam unde ea earum. Saepe, dicta iste.</p>
+                        <p class="pl-5">Plant Arena is truly the complete encyclopedia for plants. Be it any variety of plants, you name it, and this website has got it for you. They also have many interesting combos, like the best indoor plants, gardening tools, Air purifying plant packs and many more.</p>
                     </div>
                 </div>
             </div>

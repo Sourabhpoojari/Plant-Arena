@@ -1,0 +1,56 @@
+<%- include("partials/editheader") %>
+<div class="container mt-5">
+  <div class="jumbotron mt-5 mb-5">
+    <h1 class="display-4">Product Summary</h1>
+  </div>
+  <div class="list-group">
+    <% items.forEach((ele,index)=>{ %>
+      
+      <div style="border: 1px solid black !important; padding: 10px;">
+        <p style="float: right;" class="text-light p-2"><b>Ordered At : <%= moment(ele.orderedAt).format('Do MMMM, YYYY, h:mm:ss a')  %></b></p>
+        <h6 class="bg-secondary text-light p-2"><%=index+1%>.</h6>
+        <div >
+          <% ele.products.forEach((data)=>{ %>
+             <div class="mt-5 mb-5">
+              
+                <img style="width: 20%;" src="<%= data._id.productImage %>" class="prodImageprod" alt="">
+                <div class="prodDetail">
+                  <p ><b><span class="text-secondary">Product Name :</span><%= data._id.productName %></b></p>
+                <p ><b><span class="text-secondary">Quantity :</span> <%= data.totalQuantity %></b></p>
+                <p ><b><span class="text-secondary">Price :</span> <%= data.totalPrice %></b></p>
+                </div>
+              
+              </div>
+         <%  }) %>
+           <div class="prodImageaddress">
+             <p><b class="text-secondary">Delivery Address</b></p>
+            <p><b><i><%=ele.name %></i></b></p>
+            <p><i><%=ele.email %></i></p>
+            <p><i><%=ele.phone %></i></p>
+            <p><i><%=ele.address %></i></p>
+            <p><i><%=ele.pincode %></i></p>
+           </div>
+          
+            <form method="POST" action="/admin/delivery/<%=ele._id %>/cancel?_method=DELETE">
+              <button class="btn btn-danger ml-3 btn-sm" style="float: right;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle mr-1" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+              </svg> Not Delivered</button>
+            </form>
+            <form method="POST" action="/admin/delivery/<%=ele._id %>?_method=DELETE" >
+              <button class="btn btn-success btn-sm" style="float: right;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2-circle mr-1" viewBox="0 0 16 16">
+                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+              </svg>  Delivered</button>
+             </form>
+          </div>
+      </div>
+  <%  }) %>
+    </div>
+</div>
+<script>
+  $(document).ready(function(){
+        $(".fixed-top").css("background-color", "#28A745"); 
+  });
+</script>
+<%- include("partials/footer") %>

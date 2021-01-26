@@ -1,0 +1,32 @@
+<%- include("partials/header") %>
+<div class="jumbotron">
+   <h1 class="display-3">Search Result</h1>
+</div>
+<div class="container mt-5">
+    <div class="row mt-5">
+
+
+
+
+        <% products.forEach((item)=>{ %>
+            <div class="col-lg-4">
+                <a href="/Landing/<%= item._id %>">
+                 <div class="card" style="width: 18rem;">
+                  <span class="text-light rate" >	 <small><b>&#8377; <%= item.price %>/-</b></small> </span>
+                   <img src="<%= item.productImage %>" class="card-img-top" alt="...">
+                   <img class="priceTag" src="https://static.vecteezy.com/system/resources/thumbnails/001/197/142/small/ribbon.png" alt="">
+                   <h6 class="text-center mt-2 subText"><%=item.productName%></h6>
+                 </div></a>
+     
+               </div>
+      <%  }) %>
+    </div>
+</div>
+<script>
+  $(document).ready(function(){
+
+        $(".fixed-top").css("background-color", "#28A745"); 
+ 
+  });
+</script>
+<%- include("partials/footer") %>
